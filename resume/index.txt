@@ -1,0 +1,27 @@
+1:"$Sreact.fragment"
+2:I[4657,[],""]
+3:I[4165,[],""]
+4:I[9796,["796","static/chunks/796-ec7bed9f756065ea.js","345","static/chunks/app/not-found-1342f27fdb3bac70.js"],""]
+5:I[6552,[],"ClientPageRoot"]
+6:I[8714,["956","static/chunks/ab192eb5-1781a954d5f596dd.js","571","static/chunks/09a33358-7f800f95f2351556.js","253","static/chunks/253-7f6898122905d2c2.js","796","static/chunks/796-ec7bed9f756065ea.js","736","static/chunks/app/resume/page-10d2655150691adb.js"],"default"]
+9:I[9559,[],"MetadataBoundary"]
+b:I[9559,[],"OutletBoundary"]
+e:I[861,[],"AsyncMetadataOutlet"]
+10:I[9559,[],"ViewportBoundary"]
+12:I[7840,[],""]
+:HL["/kimmjen-portfolio/_next/static/media/45cca0c1391027f2-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/kimmjen-portfolio/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/kimmjen-portfolio/_next/static/css/c25caaebb4e59d85.css","style"]
+:HL["/kimmjen-portfolio/_next/static/css/9276065138c1b1be.css","style"]
+:HL["/kimmjen-portfolio/_next/static/css/672b5077cb3d1208.css","style"]
+0:{"P":null,"b":"3oKgPYJDKenWjmtZkOTVB","p":"/kimmjen-portfolio","c":["","resume",""],"i":false,"f":[[["",{"children":["resume",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/kimmjen-portfolio/_next/static/css/c25caaebb4e59d85.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/kimmjen-portfolio/_next/static/css/9276065138c1b1be.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/kimmjen-portfolio/_next/static/css/672b5077cb3d1208.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","className":"scroll-smooth","children":["$","body",null,{"className":"__className_1f491f __className_1eb3f0 bg-white text-black","suppressHydrationWarning":true,"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen flex items-center justify-center bg-[var(--background)]","children":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"text-6xl font-bold text-gray-400 mb-4","children":"404"}],["$","h2",null,{"className":"text-2xl font-semibold text-gray-600 mb-4","children":"페이지를 찾을 수 없습니다"}],["$","p",null,{"className":"text-gray-500 mb-8","children":"요청하신 페이지가 존재하지 않습니다."}],["$","$L4",null,{"href":"/","className":"inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors","children":"홈으로 돌아가기"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["resume",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L5",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@7","$@8"]}],["$","$L9",null,{"children":"$La"}],null,["$","$Lb",null,{"children":["$Lc","$Ld",["$","$Le",null,{"promise":"$@f"}]]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","LzGbYGpk-FOGgFZdPC6H2",{"children":[["$","$L10",null,{"children":"$L11"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$12","$undefined"],"s":false,"S":true}
+13:"$Sreact.suspense"
+14:I[861,[],"AsyncMetadata"]
+7:{}
+8:{}
+a:["$","$13",null,{"fallback":null,"children":["$","$L14",null,{"promise":"$@15"}]}]
+d:null
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+c:null
+15:{"metadata":[["$","title","0",{"children":"KIM JE MIN - Portfolio"}],["$","meta","1",{"name":"description","content":"데이터의 중요성을 느끼고 데이터를 다루고 싶은 데이터 엔지니어 김제민의 포트폴리오"}],["$","link","2",{"rel":"icon","href":"/kimmjen-portfolio/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+f:{"metadata":"$15:metadata","error":null,"digest":"$undefined"}
