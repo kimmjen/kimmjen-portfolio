@@ -4,9 +4,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --border-color: #707070;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --border-color: #e2e8f0;
+  --card-background: #ffffff;
+  --text-muted: #64748b;
 }
 
 @theme inline {
@@ -18,9 +20,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --border-color: #707070;
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --border-color: #334155;
+    --card-background: #1e293b;
+    --text-muted: #94a3b8;
   }
 }
 
@@ -40,6 +44,24 @@ body {
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-wider uppercase;
   }
+  
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 6px;
+  }
+  
+  .scrollbar-track-gray-100::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
 }
 
 @layer components {
@@ -52,7 +74,7 @@ body {
   }
   
   .jm-layout__item--left {
-    @apply flex-none border-r border-[var(--border-color)] w-[29.1666666667%] overflow-hidden;
+    @apply flex-none border-r border-[var(--border-color)] w-[25%] overflow-hidden;
   }
   
   .jm-logo {
@@ -97,7 +119,7 @@ body {
   }
   
   .jm-article__section:last-child {
-    @apply flex-none w-[41.1764705882%];
+    @apply flex-none w-[30%];
   }
   
   .section-title {
@@ -105,7 +127,7 @@ body {
   }
   
   .jm-biography {
-    @apply flex flex-col text-sm mx-auto max-w-xl overflow-y-auto px-5 pb-5 w-full;
+    @apply flex flex-col text-sm mx-auto max-w-4xl overflow-y-auto px-8 pb-8 w-full;
   }
   
   .jm-biography > * {
@@ -194,11 +216,25 @@ body {
     }
     
     .jm-nav__list {
-      @apply flex flex-1 flex-row flex-wrap justify-center p-0;
+      @apply flex flex-1 flex-row justify-center p-0 gap-1;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .jm-nav__list::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .jm-nav__list {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
     
     .jm-nav__item {
-      @apply text-sm py-2 px-3;
+      @apply text-xs py-2 px-2;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     
     .jm-nav__item + .jm-nav__item {
@@ -206,7 +242,7 @@ body {
     }
     
     .jm-biography {
-      @apply text-xs px-7 pb-7;
+      @apply text-sm px-6 pb-6;
     }
     
     .jm-biography, .jm-biography > * {

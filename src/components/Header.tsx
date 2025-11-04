@@ -135,6 +135,14 @@ const Header = () => {
             Contact
           </a>
         </li>
+        <li className="jm-nav__item">
+          <a 
+            href="/kimmjen-portfolio/resume" 
+            className="transition-all duration-300 hover:text-blue-600 focus:text-blue-600 focus:outline-none px-3 py-2 block hover:scale-105"
+          >
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );

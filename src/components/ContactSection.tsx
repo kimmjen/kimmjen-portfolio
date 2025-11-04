@@ -1,13 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import resumeData from '@/data/resumeData';
-import EmailModal from './EmailModal';
 
 const ContactSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const closeModal = () => setIsModalOpen(false);
 
   return (
     <section id="contact" className="py-16">
@@ -21,13 +17,15 @@ const ContactSection = () => {
             <p className="text-lg mb-4">{resumeData.contact.email}</p>
             {/* <p className="text-gray-600">{resumeData.contact.phone}</p> */}
             
-            {/* <button
-              onClick={openModal}
+            {/* <a
+              href={`mailto:${resumeData.contact.email}?subject=포트폴리오 문의`}
               className="mt-6 inline-flex items-center px-4 py-2 border border-[var(--border-color)] hover:bg-gray-50 text-sm font-medium tracking-wider transition-colors duration-300"
             >
-              <FontAwesomeIcon icon={faPaperPlane} className="mr-2 h-4 w-4" />
+              <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
               이메일 보내기
-            </button> */}
+            </a> */}
           </div>
           
           {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
@@ -54,12 +52,6 @@ const ContactSection = () => {
         </div>
       </div>
 
-      {/* 이메일 보내기 모달 */}
-      <EmailModal 
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        recipientEmail={resumeData.contact.email}
-      />
     </section>
   );
 };

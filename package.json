@@ -6,18 +6,20 @@
     "dev": "next dev --turbopack",
     "prebuild": "",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
+    "preview": "pnpm build && pnpm start",
     "lint": "next lint",
-    "deploy": "GITHUB_PAGES=true next build && touch out/.nojekyll && gh-pages -d out"
+    "deploy": "GITHUB_PAGES=true next build && touch out/.nojekyll && gh-pages -d out",
+    "pdf:resume": "md-to-pdf 김제민_이력서.md",
+    "pdf:career": "md-to-pdf 김제민_경력기술서.md",
+    "pdf:all": "npm run pdf:resume && npm run pdf:career"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@types/nodemailer": "^6.4.17",
     "next": "15.3.2",
-    "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -34,5 +36,6 @@
     "md-to-pdf": "^5.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
 }

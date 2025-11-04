@@ -17,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${inter.className} ${notoSansKr.className} bg-white text-black`}>
+      <body 
+        className={`${inter.className} ${notoSansKr.className} bg-white text-black`}
+        suppressHydrationWarning={true}
+      >
         {children}
       </body>
     </html>
