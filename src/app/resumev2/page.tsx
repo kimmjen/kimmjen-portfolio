@@ -37,7 +37,7 @@ const ResumeV2Page = () => {
             {resumeData.name}
           </h1>
           <p className="text-lg text-gray-600 mb-4">{resumeData.nameEn}</p>
-          
+
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-gray-700">
             <span>{resumeData.contact.email}</span>
             <span>•</span>
@@ -95,7 +95,7 @@ const ResumeV2Page = () => {
                 </div>
                 <span className="text-sm text-gray-600 whitespace-nowrap ml-4">{exp.period}</span>
               </div>
-              
+
               {exp.projects.map((project, projIndex) => (
                 <div key={projIndex} className="ml-4 mb-3">
                   <p className="text-sm font-semibold text-gray-800 mb-1">
@@ -141,7 +141,7 @@ const ResumeV2Page = () => {
                   <span className="text-sm text-gray-600 whitespace-nowrap ml-4">{project.period}</span>
                 )}
               </div>
-              
+
               {project.link && (
                 <p className="text-xs text-blue-600 mb-2">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -149,15 +149,15 @@ const ResumeV2Page = () => {
                   </a>
                 </p>
               )}
-              
+
               <p className="text-sm text-gray-700 mb-2 leading-relaxed">{project.description}</p>
-              
+
               {project.technologies && (
                 <p className="text-xs text-gray-600">
                   <span className="font-semibold">Technologies:</span> {project.technologies.join(', ')}
                 </p>
               )}
-              
+
               {project.features && project.features.length > 0 && (
                 <ul className="list-disc list-inside space-y-0.5 text-xs text-gray-700 mt-2 ml-2">
                   {project.features.slice(0, 3).map((feature, fIndex) => (
@@ -177,7 +177,7 @@ const ResumeV2Page = () => {
           <div className="space-y-2 text-sm">
             <div className="flex">
               <span className="font-semibold text-gray-900 min-w-[120px]">Languages:</span>
-              <span className="text-gray-700">Korean (Native), English (Professional Working Proficiency)</span>
+              <span className="text-gray-700">Korean (Native)</span>
             </div>
             <div className="flex">
               <span className="font-semibold text-gray-900 min-w-[120px]">Location:</span>

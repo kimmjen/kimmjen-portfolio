@@ -79,17 +79,16 @@ const resumeData: ResumeData = {
     {
       company: "ECHOIT",
       position: "데이터라벨링 · 임시직/프리랜서",
-      period: "2025.07 ~ 재직중",
+      period: "2025.07 ~ 2025.11",
       projects: [
         {
-          title: "국회 AI를 위한 데이터 구축",
+          title: "국회 AI를 위한 데이터 구축 및 품질 관리",
           description: [
-            "국회도서관 외국 입법례, 정책, 분석 자료 분류 및 검수 작업",
-            "법률명, 정책명, 국가명 관련 수동 데이터 라벨링 및 검수",
-            "자료 중복 데이터 검수 및 데이터 품질 관리",
-            "라벨링 툴을 활용한 데이터 업로드 및 초기 라벨링 작업",
-            "AI 모델 학습을 위한 대규모 데이터셋 구축 프로젝트 참여",
-            "외국어 자료 포함 법률 및 정책 문서 데이터 처리",
+            "데이터 라벨러로 입사 후, 뛰어난 정확성과 이해도를 인정받아 데이터 검수자로 역할 전환",
+            "3명의 검수자가 동일한 기준으로 작업하도록 '검수 표준 가이드'를 제작하여 팀 전체의 데이터 일관성 확보",
+            "라벨러들의 반복적인 질문과 해결 과정을 담은 '업무 FAQ'를 문서화하여 팀의 작업 효율성 증대",
+            "수동 검수 과정의 비효율을 개선하고자 중복 체크 및 특정 값 자동 검사 기능을 갖춘 '라벨링 품질 검수 플랫폼(labeling-qc.com)' 개발",
+            "외국 입법례, 정책 등 전문 분야 텍스트 데이터의 최종 품질 검수를 담당하여 고품질 학습 데이터셋 구축에 핵심적으로 기여",
           ],
         },
       ],
@@ -197,7 +196,7 @@ const resumeData: ResumeData = {
     },
     {
       category: "Infra",
-      items: ["Docker", "Kubernetes"],
+      items: ["Docker"],
     },
     {
       category: "Cloud",
@@ -216,7 +215,7 @@ const resumeData: ResumeData = {
     {
       title: "라벨링 품질 검수 플랫폼",
       description: "라벨링 품질 검수 및 인터랙티브 편집 플랫폼. React + TypeScript + Vite + FastAPI로 개발되었으며, 10가지 검증 규칙을 통한 자동 품질 검사 시스템을 핵심 기능으로 제공합니다. 다른 사용자들을 위한 페이지 분석 도구, 라벨링 편집(프리뷰, 검증방법), 전체 변환 및 삭제, 전체/개별 다운로드 기능을 포함합니다. Docker 컨테이너화, GitHub Actions CI/CD, AWS Lightsail 배포, Supabase 연동을 통해 운영됩니다.",
-      period: "2025.07 ~",
+      period: "2025.07 ~ 2025.11",
       link: "http://labeling-qc.com",
       type: "개인 프로젝트",
       technologies: ["React", "TypeScript", "Vite", "FastAPI", "Python", "Docker", "GitHub Actions", "AWS Lightsail", "Supabase"],
