@@ -79,7 +79,7 @@ const resumeData: ResumeData = {
     {
       company: "ECHOIT",
       position: "데이터라벨링 · 임시직/프리랜서",
-      period: "2025.07 ~ 2025.11",
+      period: "2025.07 - 2025.11",
       projects: [
         {
           title: "국회 AI를 위한 데이터 구축 및 품질 관리",
@@ -184,7 +184,7 @@ const resumeData: ResumeData = {
   skills: [
     {
       category: "Front-End",
-      items: ["React", "Vue.js", "TypeScript", "HTML5", "CSS3", "JavaScript"],
+      items: ["React", "Vue.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
     },
     {
       category: "Back-End",
@@ -214,7 +214,7 @@ const resumeData: ResumeData = {
   projects: [
     {
       title: "라벨링 품질 검수 플랫폼",
-      description: "라벨링 품질 검수 및 인터랙티브 편집 플랫폼. React + TypeScript + Vite + FastAPI로 개발되었으며, 10가지 검증 규칙을 통한 자동 품질 검사 시스템을 핵심 기능으로 제공합니다. 다른 사용자들을 위한 페이지 분석 도구, 라벨링 편집(프리뷰, 검증방법), 전체 변환 및 삭제, 전체/개별 다운로드 기능을 포함합니다. Docker 컨테이너화, GitHub Actions CI/CD, AWS Lightsail 배포, Supabase 연동을 통해 운영됩니다.",
+      description: "라벨링 품질 검수 및 인터랙티브 편집 플랫폼. React + TypeScript + Vite + FastAPI로 개발되었으며, 10가지 검증 규칙을 통한 자동 품질 검사 시스템을 핵심 기능으로 제공합니다. 다른 사용자들을 위한 페이지 분석 도구(대용량 ZIP 파일 처리), 라벨링 편집(프리뷰, 검증방법), 전체 변환 및 삭제, 전체/개별 다운로드 기능을 포함합니다. 실시간 품질 지표 시가화 대시보드와 사용자별 통계 분석 기능을 제공하며, Docker 컨테이너화, GitHub Actions CI/CD, AWS Lightsail 배포, Supabase 연동을 통해 운영됩니다.",
       period: "2025.07 ~ 2025.11",
       link: "http://labeling-qc.com",
       type: "개인 프로젝트",
