@@ -48,10 +48,10 @@ export interface ResumeData {
   projects: PersonalProject[];
 }
 
-const resumeData: ResumeData = {
+const resumeDataKo: ResumeData = {
   name: "김제민",
   nameEn: "KIM JE MIN",
-  profile: "VPP 플랫폼, 에너지 데이터 분석, AI 데이터 구축 등 다양한 도메인에서 데이터 처리와 시각화 경험을 쌓은 풀스택 개발자",
+  profile: "KDB+·PostgreSQL 기반 대용량 시계열 데이터 처리부터 Vue.js/React 대시보드 구현까지, 약 3년간 에너지(VPP) 플랫폼 전 계층을 설계·운영한 풀스택 개발자",
   contact: {
     phone: "010-****-****",
     email: "wpals814@gmail.com",
@@ -95,15 +95,16 @@ const resumeData: ResumeData = {
     },
     {
       company: "소프트웨어공작소",
-      position: "선임연구원",
+      position: "선임연구원 (프론트엔드 개발)",
       period: "2024.12 - 2025.03",
       projects: [
         {
-          title: "Toyota 텔레매틱스 프로젝트",
+          title: "Toyota 텔레매틱스 웹퍼블리싱",
+          date: "2024.12 ~ 2025.03",
           description: [
-            "HTML5, CSS3, JavaScript를 활용한 데이터 처리 및 시각화",
-            "Git을 활용한 데이터 버전 관리 시스템 구축",
-            "UI 컴포넌트 및 레이아웃 구현을 통한 데이터 시각화",
+            "CallCenterWeb/OperationWeb 클라이언트 및 관리 시스템 웹 퍼블리싱 구현",
+            "반응형 웹 디자인 적용 및 크로스 브라우저 호환성 확보",
+            "이미지 최적화를 통한 페이지 로딩 성능 개선",
           ],
         },
       ],
@@ -147,13 +148,23 @@ const resumeData: ResumeData = {
           title: "D3 프로젝트",
           date: "2022.08 ~ 2023.09",
           description: [
-            "분산 에너지 자원의 시계열 데이터를 분석하고, 시각화 및 통계 데이터 보고서를 쉽게 생성 및 공유하기 위한 데이터 분석 및 시각화 서비스",
+            "D1에서 구축한 CBL 데이터를 기반으로, 분산 에너지 자원의 시계열 데이터를 분석·시각화하여 통계 보고서를 생성·공유하는 서비스 개발",
             "기획, 프로세스 문서 및 스프린트 단위로 개발",
             "어플리케이션 레이아웃, 데이터 셋, 어드민 페이지 UI 구현",
             "PostgreSQL을 활용한 RDB 구축 및 최적화",
             "Vue.js를 활용한 사용자 인터페이스 설계",
             "Flask 기반 API 개발 및 Docker 컨테이너화",
             "GitHub Actions를 활용한 CI/CD 파이프라인 구축",
+          ],
+        },
+        {
+          title: "D1 프로젝트 운영 및 유지보수",
+          date: "2022.08 ~ 2024.07",
+          description: [
+            "아이온커뮤니케이션즈에서 개발한 D1 CBL 계산 시스템의 지속적 운영 및 유지보수",
+            "CBL 알고리즘 및 고객 수요관리 로직 코드 수정 및 업데이트",
+            "D1 서비스 서버 배포, 모니터링 및 인프라 관리",
+            "운영 중 발생하는 데이터 이슈 대응 및 안정성 개선",
           ],
         },
       ],
@@ -168,6 +179,9 @@ const resumeData: ResumeData = {
           date: "2021.12 ~ 2022.08",
           description: [
             "수요 반응 프로그램 평가를 위한 고객 기준 부하, 참여 전력 소비 형태 검증 기준(RRMSE)를 계산 및 예측하는 서비스",
+            "전력거래소 기준서 기반 고객 기준 부하(CBL) 계산 시스템 개발",
+            "한국 및 일본 전력시장 규정에 따른 CBL 알고리즘 구현",
+            "KDB+ 시계열 데이터베이스 쿼리 작성 및 시스템 유지보수",
             "고객 기준 부하 예측을 위한 UI 개발",
             "GitHub Actions을 이용한 CI/CD 적용",
             "GitHub 브랜치 전략 수립",
@@ -240,6 +254,32 @@ const resumeData: ResumeData = {
       ]
     },
     {
+      title: "Refine - AI 링크 수집·관리 플랫폼",
+      description: "모바일 공유 시트에서 링크를 저장하면 Google Gemini AI가 자동으로 카테고리 분류·한국어 요약·태그 추출하는 PWA 북마크 매니저. Next.js 16 + React 19 + TypeScript + Supabase(PostgreSQL + Auth + Storage)로 구축하고, 100개 이상 플랫폼 자동 인식 및 메타데이터 수집, YouTube 임베디드 플레이어, 드래그앤드롭 카테고리 관리, Super Admin 대시보드(SQL 콘솔, DB 스키마 브라우저)를 포함하며, Vitest 46개 테스트를 갖춘 프로덕션 레벨 애플리케이션입니다.",
+      period: "2025.12 ~ 현재",
+      link: "https://refine-rust.vercel.app/",
+      type: "개인 프로젝트",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Google Gemini AI", "SWR", "Framer Motion", "Vitest", "Vercel"],
+      features: [
+        "PWA Share Target으로 모바일 네이티브 공유 시트에서 직접 링크 저장",
+        "Google Gemini 2.0 AI 기반 자동 카테고리 분류(23개+), 한국어 요약, 태그 추출(최대 5개)",
+        "100개+ 플랫폼 자동 인식(YouTube, GitHub, Twitter 등) 및 플랫폼별 메타데이터 수집",
+        "YouTube 임베디드 플레이어 및 재생목록 네비게이션",
+        "드래그앤드롭 카테고리 관리 및 카테고리별 링크 통계",
+        "Google OAuth 인증, Row Level Security 기반 멀티유저 데이터 격리",
+        "Super Admin 대시보드 (시스템 통계, 사용자 관리, DB 스키마 브라우저, SQL 콘솔)",
+        "Vitest 기반 46개 테스트(유닛 + 통합) 및 Sentry 에러 트래킹"
+      ],
+      challenges: [
+        "100개+ 플랫폼별 스마트 User-Agent 전략 설계 (LinkedIn → Googlebot, Twitter → Twitterbot 등)",
+        "OG 이미지 스크래핑 후 Supabase Storage로 영속화하는 이미지 파이프라인 구축",
+        "PWA Service Worker와 Share Target API를 활용한 네이티브 앱 수준의 공유 경험 구현",
+        "Gemini AI 호출 시 Rate Limiting 및 벌크 백필 처리의 안정성 확보",
+        "URL 정규화 및 중복 감지 알고리즘 설계 (변형 URL 대응)",
+        "Supabase Row Level Security 기반 멀티유저 데이터 격리 설계"
+      ]
+    },
+    {
       title: "뜬뜬(ddendden) 프로젝트",
       description: "유재석과 안테나 플러스 제작사의 콘텐츠 중심 웹 플랫폼. React, Next.js, TypeScript, Tailwind CSS로 개발된 팬 커뮤니티 허브로, 다양한 콘텐츠 시리즈(핑계고, 풍향고, 이달의 계원 등)를 제공하며 다국어 지원 및 시상식 시스템을 갖추고 있습니다.",
       period: "2024.11 - 2025.02",
@@ -287,7 +327,18 @@ const resumeData: ResumeData = {
       period: "2023.12 - 2024.07",
       link: "",
       type: "회사 프로젝트",
-      technologies: ["Spring Boot", "FastAPI", "Vue.js", "Python"]
+      technologies: ["Spring Boot", "FastAPI", "Vue.js", "Python"],
+      features: [
+        "VPP 플랫폼 리소스 데이터를 가상으로 생성하는 시뮬레이션 서비스 구현",
+        "VPP connector UI를 통한 외부 시스템 연동 인터페이스 개발",
+        "스케줄 관리 UI로 데이터 생성 주기 및 업데이트 일정 제어",
+        "FastAPI 기반 백엔드 API 서비스 설계 및 구축"
+      ],
+      challenges: [
+        "가상 리소스 데이터의 현실성 확보를 위한 데이터 모델링",
+        "기존 Spring Boot 백엔드와 FastAPI 서비스 간 역할 분리 및 통신 설계",
+        "스케줄 관리 시 시간대(Timezone) 처리 및 동시성 이슈 해결"
+      ]
     },
     {
       title: "Amadeus 프로젝트",
@@ -295,7 +346,18 @@ const resumeData: ResumeData = {
       period: "2023.12 - 2024.07",
       link: "",
       type: "회사 프로젝트",
-      technologies: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS EC2", "FastAPI"]
+      technologies: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS EC2", "FastAPI"],
+      features: [
+        "Balancing Group(군집화된 참여자)별 지령 수행 여부를 실시간으로 확인하는 모니터링 UI 구현",
+        "시스템 전체 알림 UI 개발로 이벤트 발생 시 즉각적인 상태 파악 가능",
+        "참여자 데이터 기반 Balancing Group 생성 및 분석 리포트 공유 기능",
+        "Highcharts 기반 실시간 데이터 시각화 대시보드 구축"
+      ],
+      challenges: [
+        "다수 참여자의 지령 수행 데이터를 실시간으로 집계하여 표시하는 성능 최적화",
+        "Balancing Group 단위의 복잡한 데이터 구조를 직관적으로 표현하는 UI/UX 설계",
+        "알림 시스템의 이벤트 우선순위 처리 및 사용자별 알림 설정 관리"
+      ]
     },
     {
       title: "Arkn 프로젝트",
@@ -303,7 +365,18 @@ const resumeData: ResumeData = {
       period: "2023.08 - 2023.12",
       link: "",
       type: "회사 프로젝트",
-      technologies: ["Spring Boot", "Vue.js"]
+      technologies: ["Spring Boot", "Vue.js"],
+      features: [
+        "MBESS(Mobile Battery Energy Service System) 실시간 충전량·방전량·배터리 수명 모니터링 UI 구현",
+        "배터리 내 개별 Cell 데이터를 실시간으로 시각화하는 상세 모니터링 화면 개발",
+        "배터리 시스템 이상 감지 시 알림창을 통한 즉각적인 상태 알림 기능",
+        "충전소별 ESS 상태 및 충전 차량 정보를 한눈에 파악할 수 있는 통합 대시보드"
+      ],
+      challenges: [
+        "배터리 Cell 단위의 대량 실시간 데이터를 프론트엔드에서 효율적으로 렌더링하는 최적화",
+        "충전량·방전량·SOC 등 다양한 지표를 하나의 대시보드에 직관적으로 배치하는 레이아웃 설계",
+        "실시간 데이터 스트림과 이력 데이터 조회 간의 UI 전환 처리"
+      ]
     },
     {
       title: "D3 프로젝트",
@@ -324,4 +397,358 @@ const resumeData: ResumeData = {
   ],
 };
 
-export default resumeData; 
+const resumeDataEn: ResumeData = {
+  name: "KIM JE MIN",
+  nameEn: "KIM JE MIN",
+  profile: "Full-stack developer with 3 years of experience designing and operating energy (VPP) platforms end-to-end — from KDB+/PostgreSQL time-series data processing to Vue.js/React dashboard implementation.",
+  contact: {
+    phone: "010-****-****",
+    email: "wpals814@gmail.com",
+    address: "Yeoksam-dong, Gangnam-gu, Seoul, Republic of Korea",
+    birth: "1992.08.14",
+  },
+  education: [
+    {
+      school: "Daejeon University",
+      degree: "Bachelor of Business Administration",
+      period: "2012.03 - 2019.08",
+    },
+    {
+      school: "BIT Education Center",
+      degree: "Big Data Analysis Platform Development using AI Course",
+      period: "2019.11 - 2020.05",
+    },
+    {
+      school: "KOSA (Korea Software Industry Association)",
+      degree: "I-ON Communications Recruitment Course",
+      period: "2021.08 - 2021.11",
+    },
+  ],
+  experience: [
+    {
+      company: "ECHOIT",
+      position: "Data Labeler / Freelancer",
+      period: "2025.07 - 2025.11",
+      projects: [
+        {
+          title: "Data Construction and QA for National Assembly AI",
+          description: [
+            "Started as a data labeler and transitioned to a Data Validator role recognized for high accuracy and understanding.",
+            "Created 'Standard Inspection Guidelines' to ensure consistency across 3 validators.",
+            "Documented 'Work FAQ' based on recurring questions to improve team efficiency.",
+            "Developed 'Labeling QA Platform (labeling-qc.com)' with duplicate checks and auto-validation to improve efficiency of manual inspection.",
+            "Contributed significantly to building high-quality training datasets by validating specialized text data such as foreign legislation and policies.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Software Workshop",
+      position: "Senior Researcher (Frontend Developer)",
+      period: "2024.12 - 2025.03",
+      projects: [
+        {
+          title: "Toyota Telematics Web Publishing",
+          date: "2024.12 ~ 2025.03",
+          description: [
+            "Web publishing for CallCenterWeb/OperationWeb client and admin systems.",
+            "Applied responsive web design and ensured cross-browser compatibility.",
+            "Improved page loading performance through image optimization.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "EIPGRID",
+      position: "Assistant Manager",
+      period: "2022.08 - 2024.07",
+      projects: [
+        {
+          title: "EnergyHub Project",
+          date: "2023.12 ~ 2024.07",
+          description: [
+            "Developed service to virtually generate resource data for EIP's VPP platform.",
+            "Developed VPP connector UI, schedule management, and data update services.",
+            "Implemented user-centric dashboard using Vue.js.",
+            "Built backend API services using FastAPI.",
+          ],
+        },
+        {
+          title: "Amadeus Project",
+          date: "2023.12 ~ 2024.07",
+          description: [
+            "Developed service for Balancing Group creation, analysis, and report sharing based on VPP participant data.",
+            "Developed UI to verify command execution status of Balancing Groups.",
+            "Developed notification UI for the Amadeus system.",
+            "Built data visualization and real-time monitoring dashboard.",
+          ],
+        },
+        {
+          title: "Arkn Project",
+          date: "2023.08 ~ 2023.12",
+          description: [
+            "Service providing real-time charging vehicle info, ESS info, and station battery info for charging station managers.",
+            "Developed UI providing real-time charge/discharge amounts and battery life of MBESS.",
+            "Developed battery system notification and real-time cell data UI.",
+            "Designed and implemented real-time data visualization UI and dashboard.",
+          ],
+        },
+        {
+          title: "D3 Project",
+          date: "2022.08 ~ 2023.09",
+          description: [
+            "Built on D1's CBL data to develop a data analysis and visualization service for time-series data of distributed energy resources, enabling automated statistical report generation and sharing.",
+            "Developed in sprints with planning and process documentation.",
+            "Implemented application layout, datasets, and admin page UI.",
+            "Built and optimized RDB using PostgreSQL.",
+            "Designed user interface using Vue.js.",
+            "Developed Flask-based API and containerized with Docker.",
+            "Built CI/CD pipelines using GitHub Actions.",
+          ],
+        },
+        {
+          title: "D1 Project Operations & Maintenance",
+          date: "2022.08 ~ 2024.07",
+          description: [
+            "Continued operations and maintenance of D1 CBL calculation system originally developed at I-ON Communications.",
+            "Updated and modified CBL algorithm and customer demand management logic.",
+            "Managed D1 service server deployment, monitoring, and infrastructure.",
+            "Responded to production data issues and improved system stability.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "I-ON Communications",
+      position: "Staff",
+      period: "2021.12 - 2022.08",
+      projects: [
+        {
+          title: "D1 Project",
+          date: "2021.12 ~ 2022.08",
+          description: [
+            "Service calculating and predicting customer baseline load and RRMSE for demand response evaluation.",
+            "Developed CBL (Customer Baseline Load) calculation system based on KPX (Korea Power Exchange) standards.",
+            "Implemented CBL algorithms in compliance with Korea and Japan electricity market regulations.",
+            "Wrote KDB+ time-series database queries and maintained the system.",
+            "Developed UI for customer baseline load prediction.",
+            "Applied CI/CD using GitHub Actions.",
+            "Established GitHub branch strategy.",
+            "Server deployment and release note documentation.",
+            "Visualized data analysis results.",
+            "Analyzed data outliers.",
+            "Migrated Flask-based API to FastAPI.",
+            "Improved data verification and accuracy.",
+          ],
+        },
+      ],
+    },
+  ],
+  skills: [
+    {
+      category: "Front-End",
+      items: ["React", "Vue.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
+    },
+    {
+      category: "Back-End",
+      items: ["Python (Flask, FastAPI)", "Spring Boot"],
+    },
+    {
+      category: "Database",
+      items: ["SQL (PostgreSQL)", "Supabase"],
+    },
+    {
+      category: "Infra",
+      items: ["Docker"],
+    },
+    {
+      category: "Cloud",
+      items: ["AWS EC2", "AWS Elastic Beanstalk", "AWS S3", "AWS Route53", "AWS Lightsail"],
+    },
+    {
+      category: "Tools",
+      items: ["Git", "GitHub", "GitHub Actions", "Vite", "Webpack", "Slack"],
+    },
+    {
+      category: "Others",
+      items: ["CI/CD", "RESTful API", "Data Visualization"],
+    },
+  ],
+  projects: [
+    {
+      title: "Labeling QA Platform",
+      description: "Labeling QA and interactive editing platform. Developed with React + TypeScript + Vite + FastAPI, providing an automated quality inspection system with 10 validation rules. Includes page analysis tools for other users (large ZIP processing), labeling editing (preview, validation methods), bulk conversion/deletion, and download features. Provides real-time quality metric dashboards and user statistics. Deployed using Docker, GitHub Actions, AWS Lightsail, and Supabase.",
+      period: "2025.07 ~ 2025.11",
+      link: "http://labeling-qc.com",
+      type: "Personal Project",
+      technologies: ["React", "TypeScript", "Vite", "FastAPI", "Python", "Docker", "GitHub Actions", "AWS Lightsail", "Supabase"],
+      features: [
+        "Automated quality inspection system with 10 validation rules (Core Feature)",
+        "Page analysis tool for other users (Large ZIP processing)",
+        "Labeling editing functions (Preview, validation methods)",
+        "Bulk conversion and deletion (Label type conversion, batch delete)",
+        "Full and individual download functions",
+        "Real-time quality metric dashboard and user statistics",
+        "CI/CD pipeline using GitHub Actions",
+        "AWS Lightsail deployment and Supabase integration"
+      ],
+      challenges: [
+        "Designing 10 validation rules and implementing auto-inspection logic",
+        "Optimizing large ZIP file processing and developing page analysis",
+        "Implementing preview and validation methods for editing",
+        "Optimizing UX for bulk conversion/deletion and downloads",
+        "Building GitHub Actions CI/CD pipeline",
+        "Configuring AWS Lightsail environment and Docker containerization",
+        "Implementing Supabase integration and VPN handling logic"
+      ]
+    },
+    {
+      title: "Refine - AI Link Collector & Manager",
+      description: "PWA bookmark manager that auto-classifies, summarizes, and tags links via Google Gemini AI when saved from mobile share sheet. Built with Next.js 16 + React 19 + TypeScript + Supabase (PostgreSQL + Auth + Storage). Features 100+ platform auto-detection with metadata scraping, YouTube embedded player, drag-and-drop category management, Super Admin dashboard (SQL console, DB schema browser), and 46 Vitest tests.",
+      period: "2025.12 ~ Present",
+      link: "https://refine-rust.vercel.app/",
+      type: "Personal Project",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Google Gemini AI", "SWR", "Framer Motion", "Vitest", "Vercel"],
+      features: [
+        "PWA Share Target for saving links directly from mobile native share sheet",
+        "Google Gemini 2.0 AI auto-classification (23+ categories), Korean summary, tag extraction (max 5)",
+        "100+ platform auto-detection (YouTube, GitHub, Twitter, etc.) with platform-specific metadata scraping",
+        "YouTube embedded player and playlist navigation",
+        "Drag-and-drop category management with per-category link statistics",
+        "Google OAuth authentication with Row Level Security for multi-user data isolation",
+        "Super Admin dashboard (system stats, user management, DB schema browser, SQL console)",
+        "Vitest-based 46 tests (unit + integration) and Sentry error tracking"
+      ],
+      challenges: [
+        "Smart User-Agent strategy design for 100+ platforms (LinkedIn → Googlebot, Twitter → Twitterbot)",
+        "Image pipeline: OG image scraping → Supabase Storage persistence",
+        "Native app-level sharing experience via PWA Service Worker and Share Target API",
+        "Rate limiting and stability for Gemini AI bulk backfill operations",
+        "URL normalization and duplicate detection algorithm for URL variants",
+        "Multi-user data isolation via Supabase Row Level Security"
+      ]
+    },
+    {
+      title: "ddendden Project",
+      description: "Content-centric web platform for Yoo Jae-suk and Antenna Plus. Built with React, Next.js, TypeScript, Tailwind CSS. A fan community hub providing various content series, multi-language support, and an awards system.",
+      period: "2024.11 - 2025.02",
+      link: "https://ddendden.vercel.app/",
+      type: "Personal Project",
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      features: [
+        "Various content series provided",
+        "Multi-language support system",
+        "Awards system and voting function",
+        "Responsive web design",
+        "User authentication and permission management"
+      ],
+      challenges: [
+        "Optimizing large media content and loading performance",
+        "Implementing i18n for multi-language support",
+        "Handling concurrency in real-time voting system",
+        "Optimizing UX for mobile environments"
+      ]
+    },
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio website using Next.js and React. Implemented responsive design with Tailwind CSS and improved user experience.",
+      period: "2024",
+      link: "https://github.com/kimmjen/kimmjen-portpolio",
+      type: "Personal Project",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GitHub Pages"],
+      features: [
+        "Responsive Web Design",
+        "Dark/Light mode support",
+        "Email contact function",
+        "Project detail modal",
+        "GitHub Pages automated deployment"
+      ],
+      challenges: [
+        "Optimizing Next.js for GitHub Pages static hosting",
+        "Utilizing Tailwind CSS for responsive design",
+        "Implementing email function alternatives without API routes",
+        "SEO optimization and metadata management"
+      ]
+    },
+    {
+      title: "EnergyHub Project",
+      description: "Service generating virtual resource data for EIP's VPP platform. Developed with Spring Boot + FastAPI + Vue.js. Implemented dashboard UI with Vue.js and backend API with FastAPI.",
+      period: "2023.12 - 2024.07",
+      link: "",
+      type: "Company Project",
+      technologies: ["Spring Boot", "FastAPI", "Vue.js", "Python"],
+      features: [
+        "Virtual resource data simulation service for VPP platform",
+        "VPP connector UI for external system integration",
+        "Schedule management UI for data generation cycle control",
+        "FastAPI-based backend API service design and implementation"
+      ],
+      challenges: [
+        "Data modeling for realistic virtual resource generation",
+        "Role separation and communication design between Spring Boot and FastAPI services",
+        "Timezone handling and concurrency issues in schedule management"
+      ]
+    },
+    {
+      title: "Amadeus Project",
+      description: "Balancing Group creation and analysis service based on VPP participant data. Developed with Spring Boot + Vue.js + PostgreSQL + AWS EC2 + FastAPI. Built command verification UI and real-time monitoring dashboard.",
+      period: "2023.12 - 2024.07",
+      link: "",
+      type: "Company Project",
+      technologies: ["Spring Boot", "Vue.js", "PostgreSQL", "AWS EC2", "FastAPI"],
+      features: [
+        "Real-time monitoring UI for Balancing Group command execution verification",
+        "System-wide notification UI for immediate event status awareness",
+        "Balancing Group creation and analysis report sharing based on participant data",
+        "Highcharts-based real-time data visualization dashboard"
+      ],
+      challenges: [
+        "Performance optimization for real-time aggregation of multi-participant command data",
+        "UI/UX design for intuitive representation of complex Balancing Group data structures",
+        "Event priority handling and per-user notification settings in alert system"
+      ]
+    },
+    {
+      title: "Arkn Project",
+      description: "EV charging station management system. Developed with Spring Boot + Vue.js. Developed UI for real-time monitoring of MBESS charge/discharge and battery info.",
+      period: "2023.08 - 2023.12",
+      link: "",
+      type: "Company Project",
+      technologies: ["Spring Boot", "Vue.js"],
+      features: [
+        "Real-time MBESS charge/discharge amount and battery life monitoring UI",
+        "Detailed monitoring screen for individual battery cell data visualization",
+        "Alert notification for battery system anomaly detection",
+        "Integrated dashboard for charging station ESS status and vehicle information"
+      ],
+      challenges: [
+        "Efficient frontend rendering optimization for large-volume real-time battery cell data",
+        "Layout design for intuitive placement of multiple metrics (charge, discharge, SOC) in a single dashboard",
+        "UI transition handling between real-time data streams and historical data queries"
+      ]
+    },
+    {
+      title: "D3 Project",
+      description: "Time-series data analysis and visualization service for distributed energy resources. Developed with Flask + PostgreSQL + Docker + GitHub Actions + Vue.js. Designed UI with Vue.js and built database with PostgreSQL.",
+      period: "2022.08 - 2023.09",
+      link: "",
+      type: "Company Project",
+      technologies: ["Flask", "PostgreSQL", "Docker", "GitHub Actions", "Vue.js", "AWS EC2", "AWS Beanstalk"]
+    },
+    {
+      title: "D1 Project",
+      description: "Load verification service for demand response evaluation. Developed with Flask + PostgreSQL + Docker + GitHub Actions + Vue.js. Developed customer baseline load prediction UI and applied CI/CD. Migrated Flask to FastAPI.",
+      period: "2021.12 - 2022.08",
+      link: "",
+      type: "Company Project",
+      technologies: ["Flask", "FastAPI", "PostgreSQL", "Docker", "GitHub Actions", "Vue.js", "AWS EC2"]
+    }
+  ],
+};
+
+const resumeData = {
+  ko: resumeDataKo,
+  en: resumeDataEn
+};
+
+export default resumeData;

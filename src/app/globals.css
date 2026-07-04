@@ -9,6 +9,15 @@
   --border-color: #e2e8f0;
   --card-background: #ffffff;
   --text-muted: #64748b;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --card-hover: #f1f5f9;
+  --accent: #334155;
+  --accent-light: #e2e8f0;
+  --accent-text: #1e293b;
+  --section-bg: #f1f5f9;
+  --underline-color: #1e293b;
+  --modal-overlay: rgba(0, 0, 0, 0.6);
 }
 
 @theme inline {
@@ -18,13 +27,39 @@
   --font-mono: var(--font-geist-mono);
 }
 
+:root.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --border-color: #334155;
+  --card-background: #1e293b;
+  --text-muted: #94a3b8;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #64748b;
+  --card-hover: #334155;
+  --accent: #94a3b8;
+  --accent-light: #334155;
+  --accent-text: #f1f5f9;
+  --section-bg: #1e293b;
+  --underline-color: #94a3b8;
+  --modal-overlay: rgba(0, 0, 0, 0.8);
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0f172a;
     --foreground: #f1f5f9;
     --border-color: #334155;
     --card-background: #1e293b;
     --text-muted: #94a3b8;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #64748b;
+    --card-hover: #334155;
+    --accent: #94a3b8;
+    --accent-light: #334155;
+    --accent-text: #f1f5f9;
+    --section-bg: #1e293b;
+    --underline-color: #94a3b8;
+    --modal-overlay: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -40,25 +75,30 @@ body {
   html {
     scroll-behavior: smooth;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-wider uppercase;
   }
-  
+
   /* Custom scrollbar */
   .scrollbar-thin {
     scrollbar-width: thin;
   }
-  
+
   .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
     background-color: #d1d5db;
     border-radius: 6px;
   }
-  
+
   .scrollbar-track-gray-100::-webkit-scrollbar-track {
     background-color: #f3f4f6;
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
   }
@@ -68,105 +108,107 @@ body {
   .jm-layout {
     @apply flex fixed h-full w-full text-center;
   }
-  
+
   .jm-layout__item {
     @apply relative w-full;
   }
-  
+
   .jm-layout__item--left {
     @apply flex-none border-r border-[var(--border-color)] w-[25%] overflow-hidden;
   }
-  
+
   .jm-logo {
     @apply text-3xl font-bold tracking-widest mt-5 z-10 relative;
     color: var(--foreground);
   }
-  
+
   .jm-nav {
     @apply flex flex-col relative text-center overflow-auto;
   }
-  
+
   .jm-nav__list {
     @apply my-auto py-5;
   }
-  
+
   .jm-nav__item {
     @apply text-xl;
   }
-  
-  .jm-nav__item + .jm-nav__item {
+
+  .jm-nav__item+.jm-nav__item {
     @apply mt-6;
   }
-  
-  .jm-nav__item--active, .jm-nav__item:hover, .jm-nav__item:focus {
+
+  .jm-nav__item--active,
+  .jm-nav__item:hover,
+  .jm-nav__item:focus {
     @apply font-bold;
   }
 
   .jm-article {
     @apply flex absolute top-0 left-0 h-full w-full z-[1] overflow-hidden;
   }
-  
+
   .jm-article__section {
     @apply relative w-full h-full overflow-auto scroll-smooth;
   }
-  
-  .jm-article__section + .jm-article__section {
+
+  .jm-article__section+.jm-article__section {
     @apply border-l border-[var(--border-color)];
   }
-  
+
   .jm-article__section:first-child {
     @apply flex-1;
   }
-  
+
   .jm-article__section:last-child {
     @apply flex-none w-[30%];
   }
-  
+
   .section-title {
     @apply text-xl md:text-2xl font-bold uppercase tracking-widest text-center mb-12 mt-8;
   }
-  
+
   .jm-biography {
     @apply flex flex-col text-sm mx-auto max-w-4xl overflow-y-auto px-8 pb-8 w-full;
   }
-  
-  .jm-biography > * {
+
+  .jm-biography>* {
     @apply mx-auto w-full;
   }
-  
+
   .jm-biography__wrapper {
     @apply m-auto;
   }
-  
+
   .jm-biography__info {
-    @apply border-b border-black py-5;
+    @apply border-b border-[var(--border-color)] py-5;
   }
-  
+
   .jm-biography__name {
     @apply text-xl font-bold;
   }
-  
+
   .jm-biography__date {
     @apply font-bold mt-3;
   }
-  
+
   .jm-biography__description {
     @apply mt-8 text-left leading-relaxed;
   }
-  
+
   .jm-history {
     @apply font-bold leading-tight py-5 text-left;
   }
-  
+
   .jm-history__item {
     @apply flex;
   }
-  
+
   .jm-history__title {
     @apply flex-none w-16 inline-block;
   }
-  
-  .jm-history__item + .jm-history__item {
+
+  .jm-history__item+.jm-history__item {
     @apply mt-1;
   }
 
@@ -174,93 +216,94 @@ body {
     .jm-layout {
       @apply flex-col h-auto relative mx-auto max-w-3xl pt-28 overflow-x-hidden;
     }
-    
+
     .jm-layout__item {
       @apply w-full;
     }
-    
+
     .jm-layout__item:first-child {
-      @apply bg-white fixed top-0 left-0 right-0 mx-auto max-w-3xl z-20;
+      @apply bg-[var(--background)] fixed top-0 left-0 right-0 mx-auto max-w-3xl z-20;
     }
-    
+
     .jm-layout .jm-layout__item--left {
       @apply border-r-0 border-b border-[var(--border-color)] pb-3;
     }
-    
+
     .jm-article {
       @apply flex-col h-auto static w-full;
     }
-    
+
     .jm-article__section {
       @apply h-auto;
     }
-    
+
     .jm-article__section:first-child {
       @apply w-full;
     }
-    
+
     .jm-article__section:last-child {
       @apply w-full;
     }
-    
-    .jm-article__section + .jm-article__section {
+
+    .jm-article__section+.jm-article__section {
       @apply border-l-0 border-t border-[var(--border-color)];
     }
-    
+
     .jm-logo {
       @apply static text-2xl mb-2 mt-5 transform-none transition-none;
     }
-    
+
     .jm-nav {
       @apply flex-row;
     }
-    
+
     .jm-nav__list {
       @apply flex flex-1 flex-row justify-center p-0 gap-1;
       flex-wrap: nowrap;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
-    
+
     .jm-nav__list::-webkit-scrollbar {
       display: none;
     }
-    
+
     .jm-nav__list {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    
+
     .jm-nav__item {
       @apply text-xs py-2 px-2;
       flex-shrink: 0;
       white-space: nowrap;
     }
-    
-    .jm-nav__item + .jm-nav__item {
+
+    .jm-nav__item+.jm-nav__item {
       @apply mt-0;
     }
-    
+
     .jm-biography {
       @apply text-sm px-6 pb-6;
     }
-    
-    .jm-biography, .jm-biography > * {
+
+    .jm-biography,
+    .jm-biography>* {
       @apply max-w-none;
     }
-    
+
     .jm-biography__info {
       @apply border-b-0 pb-0 pt-16;
     }
-    
+
     .jm-biography__description {
       @apply mt-10;
     }
-    
+
     .jm-history {
       @apply pt-8;
     }
-    
+
     .jm-history__title {
       @apply mr-7;
     }

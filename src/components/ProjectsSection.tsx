@@ -1,14 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import resumeData from '@/data/resumeData';
+import { useLanguage } from '@/context/LanguageContext';
 import ProjectModal from './ProjectModal';
+import { PersonalProject } from '@/data/resumeData';
 
 const ProjectsSection = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof resumeData.projects[0] | null>(null);
+  const { data, t } = useLanguage();
+  const [selectedProject, setSelectedProject] = useState<PersonalProject | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (project: typeof resumeData.projects[0]) => {
+  const openModal = (project: PersonalProject) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -22,32 +24,32 @@ const ProjectsSection = () => {
     <section id="projects" className="py-16">
       <div className="jm-biography">
         <h3 className="text-xl font-bold uppercase tracking-widest text-center mb-12 mt-8">
-          PROJECTS
-          <div className="w-16 h-0.5 bg-black mx-auto mt-1"></div>
+          {t('projects')}
+          <div className="w-16 h-0.5 bg-[var(--underline-color)] mx-auto mt-1"></div>
         </h3>
-        
+
         <div className="jm-biography__wrapper">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {resumeData.projects.map((project, index) => (
+            {data.projects.map((project, index) => (
               <div key={index} className="bg-[var(--card-background)] border border-[var(--border-color)] rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]" onClick={() => openModal(project)}>
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 h-32 flex flex-col items-center justify-center border-b border-[var(--border-color)] p-4 rounded-t-lg">
-                  <h4 className="text-xl font-bold text-center text-gray-800">{project.title}</h4>
-                  {project.period && 
-                    <p className="text-sm text-gray-600 mt-2">{project.period}</p>
+                <div className="bg-[var(--section-bg)] h-32 flex flex-col items-center justify-center border-b border-[var(--border-color)] p-4 rounded-t-lg">
+                  <h4 className="text-xl font-bold text-center text-[var(--foreground)]">{project.title}</h4>
+                  {project.period &&
+                    <p className="text-sm text-[var(--text-muted)] mt-2">{project.period}</p>
                   }
                 </div>
                 <div className="p-6">
-                  <p className="text-sm mb-6 leading-relaxed text-gray-700">
+                  <p className="text-sm mb-6 leading-relaxed text-[var(--text-secondary)] line-clamp-3">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                      자세히 보기 →
+                    <span className="text-sm text-[var(--accent)] font-medium hover:text-[var(--foreground)] transition-colors">
+                      {t('view_project')} →
                     </span>
-                    
-                    <div className="text-xs text-gray-500 font-semibold bg-gray-100 px-2 py-1 rounded-full">
-                      {project.type || (index === 0 ? '개인 프로젝트' : '회사 프로젝트')}
+
+                    <div className="text-xs text-[var(--text-muted)] font-semibold bg-[var(--section-bg)] px-2 py-1 rounded-full">
+                      {project.type}
                     </div>
                   </div>
                 </div>
@@ -56,9 +58,9 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Project Modal */}
-      <ProjectModal 
+      <ProjectModal
         project={selectedProject}
         isOpen={isModalOpen}
         onClose={closeModal}

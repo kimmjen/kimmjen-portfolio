@@ -26,7 +26,7 @@ export default function Home() {
             <ContactSection />
             <Footer />
           </section>
-          
+
           <section className="jm-article__section flex flex-col" id="hero-section">
             <HeroSection />
           </section>

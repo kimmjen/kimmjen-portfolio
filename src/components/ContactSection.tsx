@@ -1,24 +1,25 @@
 'use client';
 
 import React from 'react';
-import resumeData from '@/data/resumeData';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ContactSection = () => {
+  const { data, t } = useLanguage();
 
   return (
     <section id="contact" className="py-16">
       <div className="jm-biography">
         <h3 className="uppercase tracking-wider font-bold text-xl text-center mb-8">
-          Contact
+          {t('contact')}
         </h3>
-        
+
         <div className="jm-biography__wrapper text-center">
           <div className="mb-10">
-            <p className="text-lg mb-4">{resumeData.contact.email}</p>
-            {/* <p className="text-gray-600">{resumeData.contact.phone}</p> */}
-            
+            <p className="text-lg mb-4 text-[var(--foreground)]">{data.contact.email}</p>
+            {/* <p className="text-gray-600">{data.contact.phone}</p> */}
+
             {/* <a
-              href={`mailto:${resumeData.contact.email}?subject=포트폴리오 문의`}
+              href={`mailto:${data.contact.email}?subject=포트폴리오 문의`}
               className="mt-6 inline-flex items-center px-4 py-2 border border-[var(--border-color)] hover:bg-gray-50 text-sm font-medium tracking-wider transition-colors duration-300"
             >
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,26 +28,26 @@ const ContactSection = () => {
               이메일 보내기
             </a> */}
           </div>
-          
+
           {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
             <div className="border border-[var(--border-color)] flex items-center p-4">
               <FontAwesomeIcon icon={faPhone} className="text-gray-700 text-xs w-3 h-3 mr-2" />
-              <p className="text-sm">{resumeData.contact.phone}</p>
+              <p className="text-sm">{data.contact.phone}</p>
             </div>
             
             <div className="border border-[var(--border-color)] flex items-center p-4">
               <FontAwesomeIcon icon={faEnvelope} className="text-gray-700 text-xs w-3 h-3 mr-2" />
-              <p className="text-sm">{resumeData.contact.email}</p>
+              <p className="text-sm">{data.contact.email}</p>
             </div>
             
             <div className="border border-[var(--border-color)] flex items-center p-4">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-700 text-xs w-3 h-3 mr-2" />
-              <p className="text-sm">{resumeData.contact.address}</p>
+              <p className="text-sm">{data.contact.address}</p>
             </div>
             
             <div className="border border-[var(--border-color)] flex items-center p-4">
               <FontAwesomeIcon icon={faCalendar} className="text-gray-700 text-xs w-3 h-3 mr-2" />
-              <p className="text-sm">{resumeData.contact.birth}</p>
+              <p className="text-sm">{data.contact.birth}</p>
             </div>
           </div> */}
         </div>
@@ -56,4 +57,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection; 
+export default ContactSection;
