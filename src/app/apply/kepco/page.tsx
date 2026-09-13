@@ -199,7 +199,7 @@ const KepcoApplicationPage = () => {
                           주식회사 에코아이티 (ECHOIT)
                         </td>
                         <td className="px-4 py-2 text-[var(--text-secondary)] w-1/4">
-                          데이터 검수자 (개발·검수)
+                          데이터 검수자 (개발·검수) · 계약직
                         </td>
                         <td className="px-4 py-2 text-right text-[var(--text-muted)] font-mono">
                           2025.07.22 ~ 2025.12.01
@@ -226,7 +226,7 @@ const KepcoApplicationPage = () => {
                           소프트웨어공작소
                         </td>
                         <td className="px-4 py-2 text-[var(--text-secondary)] w-1/4">
-                          선임연구원 (프론트엔드)
+                          선임연구원 (프론트엔드) · 계약직
                         </td>
                         <td className="px-4 py-2 text-right text-[var(--text-muted)] font-mono">
                           2024.12.08 ~ 2025.03.08
