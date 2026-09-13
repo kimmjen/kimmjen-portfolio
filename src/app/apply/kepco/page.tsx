@@ -180,7 +180,7 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 85자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 86자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                             AGM Center 공식 웹 플랫폼 운영 및 전력망 연구 데이터 시각화 인터페이스 개발, 연구실 웹 인프라 구축 및 관리, 사용자 대시보드 유지보수 수행.
                           </p>
@@ -234,7 +234,7 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 85자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 82자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                             Toyota 텔레매틱스 콜센터 및 운영 관리 웹 관제 시스템 퍼블리싱, 반응형 인터페이스 구현 및 로딩 속도 향상을 위한 이미지·에셋 최적화 수행.
                           </p>
@@ -261,7 +261,7 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 91자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 95자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                             VPP 분산자원 데이터 가상화, Balancing Group 분석 및 ESS 충전소 실시간 모니터링 대시보드(Vue.js/FastAPI)와 시계열 데이터 파이프라인 구축.
                           </p>
@@ -288,7 +288,7 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 90자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 89자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                             전력거래소 기준 고객기준부하(CBL) 계산 알고리즘 개발, KDB+ 기반 대용량 시계열 전력 데이터 쿼리 작성 및 Flask/FastAPI 백엔드 시스템 구축.
                           </p>
