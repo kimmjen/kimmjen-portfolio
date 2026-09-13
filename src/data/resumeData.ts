@@ -223,7 +223,7 @@ const resumeDataKo: ResumeData = {
     },
     {
       category: "Database",
-      items: ["SQL (PostgreSQL)", "Supabase"],
+      items: ["SQL (PostgreSQL)", "KDB+ (시계열 DB)", "Redis (세션 저장소)", "Supabase"],
     },
     {
       category: "Infra",
@@ -625,7 +625,7 @@ const resumeDataEn: ResumeData = {
     },
     {
       category: "Database",
-      items: ["SQL (PostgreSQL)", "Supabase"],
+      items: ["SQL (PostgreSQL)", "KDB+ (time-series DB)", "Redis (session store)", "Supabase"],
     },
     {
       category: "Infra",
