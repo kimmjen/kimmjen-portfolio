@@ -68,11 +68,22 @@ const KepcoCoverLetterPage = () => {
                     )}
                   </h2>
                   <div className="space-y-3">
-                    {item.paragraphs.map((para, pIdx) => (
-                      <p key={pIdx} className="text-[14px] text-[var(--text-secondary)] leading-[1.9] text-justify break-keep">
-                        {para}
-                      </p>
-                    ))}
+                    {item.paragraphs.map((para, pIdx) => {
+                      // "[소제목]"만으로 이루어진 문단은 강조 표시
+                      const isHeading = /^\[[^\]]+\]$/.test(para.trim());
+                      return (
+                        <p
+                          key={pIdx}
+                          className={
+                            isHeading
+                              ? 'text-[14px] font-bold text-[var(--foreground)] break-keep'
+                              : 'text-[14px] text-[var(--text-secondary)] leading-[1.9] text-justify break-keep'
+                          }
+                        >
+                          {para}
+                        </p>
+                      );
+                    })}
                   </div>
                 </section>
               );

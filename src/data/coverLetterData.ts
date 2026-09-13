@@ -34,7 +34,7 @@ export const coverLetterData: CoverLetterItem[] = [
       "그 결과 검수자들은 단순 오탈자 확인 대신 고난도 법률·정책 문맥 검증에만 집중할 수 있었고, Docker와 AWS Lightsail로 배포 환경까지 완성해 프로젝트 마감까지 안정적으로 운영했습니다.",
       "둘째, D1 프로젝트의 동기식 API를 FastAPI 비동기 구조로 전환했습니다. " +
       "기존 Flask 서버는 KDB+ 시계열 쿼리나 PuLP/Pyomo 기반 ESS 스케줄링 연산이 길어지면 서버 전체가 멈추는 블로킹 현상이 발생했습니다. 특히 여러 VPP의 CBL 계산 요청이 동시에 몰릴 때 지연이 심해졌습니다. " +
-      "이를 개선하기 위해 Uvicorn ASGI 서버 기반의 FastAPI로 마이그레이션하고, SQLAlchemy 2.0 비동기 세션과 Gevent 기반 8개 분산 태스크 워커를 배치했습니다. I/O 대기 시간을 걷어내어 대량 계산 요청도 서버 멈춤 없이 매끄럽게 소화하도록 만들었습니다.",
+      "이를 개선하기 위해 Uvicorn ASGI 서버 기반의 FastAPI로 마이그레이션하고, Gevent 기반 8개 분산 태스크 워커를 배치해 무거운 계산을 요청 처리 흐름에서 분리했습니다. 오래 걸리는 연산이 서버 전체를 막지 않는 구조로 정리한 것입니다.",
       "셋째, D1·D3 배포 과정을 GitHub Actions로 자동화했습니다. " +
       "수동 접속 배포 방식을 걷어내고 브랜치 Push 시 Docker 이미지 빌드, 레지스트리 전송, AWS Elastic Beanstalk 자동 갱신, 배포 완료 메신저 알림까지 이어지는 파이프라인을 구축했습니다. " +
       "개발·스테이징·운영 환경별 설정을 철저히 분리하여 고객사별 독립 배포를 실수 없이 진행할 수 있게 했습니다."
@@ -44,7 +44,7 @@ export const coverLetterData: CoverLetterItem[] = [
     id: "technical_depth",
     title: "기술적 역량: 전력 데이터와 웹 엔지니어링의 결합",
     paragraphs: [
-      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, SQLAlchemy ORM으로 PostgreSQL 스키마를 최적화해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있으며, Redis 캐시와 Pub/Sub을 활용해 실시간 상태 동기화 환경을 만들었습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
+      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, PostgreSQL 스키마를 직접 설계해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있으며, Redis 캐시와 Pub/Sub을 활용해 실시간 상태 동기화 환경을 만들었습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
       "프론트엔드 영역에서는 Vue.js(2/3)와 Highcharts로 에너지 관제 화면과 시계열 차트를 다수 제작했습니다. 최근에는 React, Next.js, TypeScript를 주력으로 다루며 개인 프로젝트 'Refine'을 통해 Next.js 16과 React 19, Supabase, Gemini AI를 결합한 PWA 서비스를 구축해 46개 Vitest 단위 테스트로 품질을 검증하며 운영 중입니다.",
       "인프라 및 운영에서는 Docker 컨테이너 오케스트레이션과 GitHub Actions CI/CD를 기본으로 삼고, AWS(EC2, Elastic Beanstalk, RDS, S3, Lightsail) 환경에서 환경 분리(dev/stage/prod)와 무중단 배포를 관리해 왔습니다."
     ]
@@ -84,6 +84,7 @@ export const kepcoCoverLetterData: CoverLetterItem[] = [
     title: "01. 한전 연구직 채용에 지원하게 된 동기",
     limit: 1000,
     paragraphs: [
+      "[전력망 지능화와 데이터 신뢰성 확보]",
       "약 3년간 민간 가상발전소(VPP) 플랫폼과 전력거래소 기준서 기반 수요반응(DR) 고객기준부하(CBL) 계산 시스템을 개발하고 운영했습니다. 현재는 차세대그리드 연구소에서 전력망 연구 데이터를 다루는 웹 플랫폼의 운영과 시각화 인터페이스 유지보수를 맡고 있습니다.",
       "개발을 비전공으로 시작해 빅데이터 분석 교육을 거쳐 입사한 뒤 처음 맡은 과제가 전력거래소 기준서를 코드로 옮기는 일이었습니다. 낯선 규정을 조문 단위로 뜯어 읽고 담당자에게 되물어 가며 알고리즘으로 구현하는 과정에서, 전력 데이터가 단순한 숫자가 아니라 정산과 지령의 근거가 되는 기록이라는 점을 배웠습니다. 이후 맡은 모든 업무에서 데이터의 정확성을 가장 앞에 두게 된 계기였습니다.",
       "신재생에너지 분산 전원이 빠르게 늘어나면서 전력 계통의 변동성과 복잡도는 그 어느 때보다 높아졌습니다. 이제 전력 ICT 시스템은 단순한 전산 관리를 넘어, 계통의 안전과 수급 균형을 실시간 데이터로 지탱하는 역할을 해야 한다고 생각합니다.",
@@ -98,11 +99,11 @@ export const kepcoCoverLetterData: CoverLetterItem[] = [
     paragraphs: [
       "[전력 도메인 데이터 처리] 전력거래소 기준서에 명시된 CBL 알고리즘 7종(MAX_4_5, MID_4_6, JP_STANDARD_BL 등)을 한국·일본 전력시장 규정에 맞춰 Python으로 구현하고, 수요반응 참여 성과 검증 지표(RRMSE)를 산출했습니다. 15분·30분·60분 주기의 대용량 시계열 전력 데이터는 KDB+ 시계열 데이터베이스의 Q 언어로 조회·가공했으며, 수집 데이터의 이상치를 분석해 계산 결과의 정확도를 관리했습니다. 이 시스템은 이관 후 2년간 직접 운영·개선하며 안정성을 유지했습니다.",
       "[데이터 파이프라인 및 시각화] 분산 에너지 자원의 시계열 데이터를 분석·시각화하는 플랫폼을 기획 단계부터 참여해 구축했습니다. CSV, VPP API, AWS S3 등 여러 소스에서 1분 주기로 데이터를 모으는 수집 파이프라인을 만들고, PostgreSQL 스키마 설계와 30여 개 REST API 개발, Vue.js 화면 전체 구현, Highcharts 다중 시리즈 차트와 드래그앤드롭 대시보드 구성까지 전 과정을 담당했습니다. 이동형 ESS의 실시간 충·방전량과 배터리 Cell 단위 상태 관제, Balancing Group 단위 지령 이행률 추적 화면도 같은 방식으로 개발했으며, 대량 실시간 데이터를 끊김 없이 렌더링하기 위한 프론트엔드 최적화를 함께 진행했습니다.",
-      "[분석 및 최적화] 에너지저장장치(ESS)의 피크 부하 감축과 충·방전 스케줄링을 위해 선형 프로그래밍(PuLP/Pyomo) 기반 최적화 모델을 작성했고, Pandas와 Scikit-learn(K-Means, DBSCAN)으로 고객 부하 패턴을 군집화했습니다. 또한 동기식 Flask API 구조에서 대용량 계산 요청이 동시에 몰릴 때 서버가 블로킹되는 문제를 진단하고 Uvicorn ASGI 기반 FastAPI로 마이그레이션했습니다. SQLAlchemy 2.0 비동기 세션과 Gevent 기반 8개 분산 태스크 워커를 배치해 I/O 대기 시간을 걷어냈고, Redis 캐시와 Pub/Sub으로 실시간 상태 동기화를 처리했습니다.",
+      "[분석 및 최적화] 에너지저장장치(ESS)의 피크 부하 감축과 충·방전 스케줄링을 위해 선형 프로그래밍(PuLP/Pyomo) 기반 최적화 모델을 작성했고, Pandas와 Scikit-learn(K-Means, DBSCAN)으로 고객 부하 패턴을 군집화했습니다. 또한 동기식 Flask API 구조에서 대용량 계산 요청이 동시에 몰릴 때 서버가 블로킹되는 문제를 진단하고 Uvicorn ASGI 기반 FastAPI로 마이그레이션했습니다. Gevent 기반 8개 분산 태스크 워커를 배치해 계산 작업을 분리함으로써, 오래 걸리는 연산이 전체 요청을 막지 않는 구조로 개선했습니다.",
       "[운영 및 배포 자동화] 수동 접속 배포 방식을 GitHub Actions 파이프라인으로 전환해 브랜치 Push 시 Docker 이미지 빌드, 레지스트리 전송, AWS Elastic Beanstalk 갱신, 완료 알림까지 자동으로 이어지도록 구성했습니다. 개발·스테이징·운영 환경 설정을 분리하고 브랜치 전략과 릴리즈 노트를 정착시켜, 고객사별 독립 배포를 실수 없이 수행했습니다.",
       "[현재 수행 업무] 차세대그리드 연구소에서 연구소 공식 웹 플랫폼을 운영하며, 전력망 연구 데이터 모니터링·시각화 인터페이스를 개선하고 연구용 웹 인프라를 구축·관리하고 있습니다. 전력 계통 데이터를 웹 화면으로 풀어내는 작업을 실무와 연구 양쪽에서 다뤄 본 경험입니다.",
       "[데이터 품질 관리] AI 학습용 텍스트 데이터 구축 사업에서 검수자마다 기준이 달라지는 문제를 해결하고자 검수 표준 가이드와 업무 FAQ를 문서로 정착시켰고, 중복 데이터 필터링·JSON 포맷 검사·필드 간 논리 모순 확인 등 10가지 자동 검증 규칙을 갖춘 검수 웹 플랫폼을 직접 개발해 운영했습니다.",
-      "[보유 Skill 및 사용 Tool] 백엔드: Python(FastAPI, Flask), Spring Boot, SQLAlchemy / 데이터베이스: PostgreSQL, KDB+, Redis, Supabase / 프론트엔드: Vue.js, React, Next.js, TypeScript, Highcharts / 분석·최적화: Pandas, Scikit-learn, PuLP, Pyomo / 인프라·협업: Docker, GitHub Actions CI/CD, AWS(EC2, Elastic Beanstalk, RDS, S3), Git, Slack."
+      "[보유 Skill 및 사용 Tool] 백엔드: Python(FastAPI, Flask), Spring Boot / 데이터베이스: PostgreSQL, KDB+, Supabase / 프론트엔드: Vue.js, React, Next.js, TypeScript, Highcharts / 분석·최적화: Pandas, Scikit-learn, PuLP, Pyomo / 인프라·협업: Docker, GitHub Actions CI/CD, AWS(EC2, Elastic Beanstalk, RDS, S3), Git, Slack."
     ]
   },
   {
@@ -110,6 +111,7 @@ export const kepcoCoverLetterData: CoverLetterItem[] = [
     title: "03. 입사 후 목표",
     limit: 1000,
     paragraphs: [
+      "[데이터로 계통 운영을 뒷받침하는 엔지니어]",
       "입사 초기에는 맡은 시스템의 데이터가 어디서 생성되어 어떤 규칙으로 가공되는지를 계통 업무 흐름과 함께 정확히 파악하는 데 집중하겠습니다. 전력거래소 기준서라는 낯선 규정을 코드로 옮기며 도메인을 빠르게 흡수했던 경험이 있는 만큼, 현업의 용어와 기준을 먼저 이해한 뒤 코드를 작성하겠습니다.",
       "이후에는 운영 중인 시스템의 병목을 진단하고 개선하는 역할을 맡고 싶습니다. 동기식 API의 블로킹 문제를 비동기 아키텍처로 전환해 해결했던 것처럼, 대량 요청과 대용량 시계열 연산이 몰리는 구간에서 응답 지연을 줄이고 처리량을 확보하는 일에 기여하겠습니다. 수집부터 정제, 저장, 조회까지 이어지는 데이터 파이프라인을 표준화해 분석 담당자가 데이터를 찾는 데 쓰는 시간을 줄이는 것도 목표입니다.",
       "제가 파악한 내용은 반드시 문서로 남기겠습니다. 팀의 검수 기준을 표준 가이드와 FAQ로 정착시켜 모두가 같은 기준으로 일하게 했던 경험처럼, 데이터 규격과 업무 규칙을 기록해 담당자가 바뀌어도 유지되는 조직의 자산으로 만들고자 합니다.",
