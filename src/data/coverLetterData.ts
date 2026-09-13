@@ -44,7 +44,7 @@ export const coverLetterData: CoverLetterItem[] = [
     id: "technical_depth",
     title: "기술적 역량: 전력 데이터와 웹 엔지니어링의 결합",
     paragraphs: [
-      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, PostgreSQL 스키마를 직접 설계해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
+      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, PostgreSQL 스키마를 직접 설계해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있으며, 사용자 인증 세션은 Redis를 저장소로 두어 관리했습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
       "프론트엔드 영역에서는 Vue.js(2/3)와 Highcharts로 에너지 관제 화면과 시계열 차트를 다수 제작했습니다. 최근에는 React, Next.js, TypeScript를 주력으로 다루며 개인 프로젝트 'Refine'을 통해 Next.js 16과 React 19, Supabase, Gemini AI를 결합한 PWA 서비스를 구축해 46개 Vitest 단위 테스트로 품질을 검증하며 운영 중입니다.",
       "인프라 및 운영에서는 Docker 컨테이너 오케스트레이션과 GitHub Actions CI/CD를 기본으로 삼고, AWS(EC2, Elastic Beanstalk, RDS, S3, Lightsail) 환경에서 환경 분리(dev/stage/prod)와 무중단 배포를 관리해 왔습니다."
     ]
@@ -103,7 +103,7 @@ export const kepcoCoverLetterData: CoverLetterItem[] = [
       "[운영 및 배포 자동화] 수동 접속 배포 방식을 GitHub Actions 파이프라인으로 전환해 브랜치 Push 시 Docker 이미지 빌드, 레지스트리 전송, AWS Elastic Beanstalk 갱신, 완료 알림까지 자동으로 이어지도록 구성했습니다. 개발·스테이징·운영 환경 설정을 분리하고 브랜치 전략과 릴리즈 노트를 정착시켜, 고객사별 독립 배포를 실수 없이 수행했습니다.",
       "[현재 수행 업무] 차세대그리드 연구소에서 연구소 공식 웹 플랫폼을 운영하며, 전력망 연구 데이터 모니터링·시각화 인터페이스를 개선하고 연구용 웹 인프라를 구축·관리하고 있습니다. 전력 계통 데이터를 웹 화면으로 풀어내는 작업을 실무와 연구 양쪽에서 다뤄 본 경험입니다.",
       "[데이터 품질 관리] AI 학습용 텍스트 데이터 구축 사업에서 검수자마다 기준이 달라지는 문제를 해결하고자 검수 표준 가이드와 업무 FAQ를 문서로 정착시켰고, 중복 데이터 필터링·JSON 포맷 검사·필드 간 논리 모순 확인 등 10가지 자동 검증 규칙을 갖춘 검수 웹 플랫폼을 직접 개발해 운영했습니다.",
-      "[보유 Skill 및 사용 Tool] 백엔드: Python(FastAPI, Flask), Spring Boot / 데이터베이스: PostgreSQL, KDB+, Supabase / 프론트엔드: Vue.js, React, Next.js, TypeScript, Highcharts / 분석·최적화: Pandas, Scikit-learn, PuLP, Pyomo / 인프라·협업: Docker, GitHub Actions CI/CD, AWS(EC2, Elastic Beanstalk, RDS, S3), Git, Slack."
+      "[보유 Skill 및 사용 Tool] 백엔드: Python(FastAPI, Flask), Spring Boot / 데이터베이스: PostgreSQL, KDB+, Redis(세션), Supabase / 프론트엔드: Vue.js, React, Next.js, TypeScript, Highcharts / 분석·최적화: Pandas, Scikit-learn, PuLP, Pyomo / 인프라·협업: Docker, GitHub Actions CI/CD, AWS(EC2, Elastic Beanstalk, RDS, S3), Git, Slack."
     ]
   },
   {

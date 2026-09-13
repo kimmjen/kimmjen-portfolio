@@ -358,7 +358,7 @@ const KepcoApplicationPage = () => {
                   {[
                     { category: 'Back-End', items: 'Python (FastAPI, Flask), Spring Boot, RESTful API 설계' },
                     { category: 'Front-End', items: 'React, Vue.js (2/3), Next.js, TypeScript, Tailwind CSS, Highcharts' },
-                    { category: 'Database', items: 'PostgreSQL, KDB+ (대용량 시계열 DB), Supabase' },
+                    { category: 'Database', items: 'PostgreSQL, KDB+ (대용량 시계열 DB), Supabase, Redis (세션 저장소)' },
                     { category: 'Data / Opt', items: 'Pandas, NumPy, PuLP/Pyomo (선형 프로그래밍 수학적 최적화)' },
                     { category: 'Infra / DevOps', items: 'Docker, GitHub Actions (CI/CD 자동화), AWS (EC2, Beanstalk), Linux' },
                   ].map((skill, index) => (
