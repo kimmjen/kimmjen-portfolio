@@ -231,11 +231,11 @@ const resumeDataKo: ResumeData = {
     },
     {
       category: "Cloud",
-      items: ["AWS EC2", "AWS Elastic Beanstalk", "AWS S3", "AWS Route53", "AWS Lightsail"],
+      items: ["AWS EC2", "AWS Elastic Beanstalk", "AWS S3", "AWS Route53", "AWS Lightsail", "Vercel"],
     },
     {
       category: "Tools",
-      items: ["Git", "GitHub", "GitHub Actions", "Vite", "Webpack", "Slack"],
+      items: ["Git", "GitHub", "GitHub Actions", "Vite", "Webpack", "Slack", "Resend (트랜잭션 이메일)"],
     },
     {
       category: "Others",
@@ -633,11 +633,11 @@ const resumeDataEn: ResumeData = {
     },
     {
       category: "Cloud",
-      items: ["AWS EC2", "AWS Elastic Beanstalk", "AWS S3", "AWS Route53", "AWS Lightsail"],
+      items: ["AWS EC2", "AWS Elastic Beanstalk", "AWS S3", "AWS Route53", "AWS Lightsail", "Vercel"],
     },
     {
       category: "Tools",
-      items: ["Git", "GitHub", "GitHub Actions", "Vite", "Webpack", "Slack"],
+      items: ["Git", "GitHub", "GitHub Actions", "Vite", "Webpack", "Slack", "Resend (transactional email)"],
     },
     {
       category: "Others",

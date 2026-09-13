@@ -184,7 +184,7 @@ const KentechApplicationPage = () => {
                     { category: 'Front-End', items: 'Vue.js, React, Next.js, TypeScript, JavaScript, HTML/CSS' },
                     { category: 'Database', items: 'PostgreSQL, KDB+ (시계열), Supabase, Redis (세션 저장소)' },
                     { category: 'Data/ML', items: 'Pandas, NumPy, Scikit-learn, PuLP, Pyomo (LP 최적화)' },
-                    { category: 'Infra', items: 'Docker, GitHub Actions, AWS (EC2, Beanstalk, RDS, S3)' },
+                    { category: 'Infra', items: 'Docker, GitHub Actions, AWS (EC2, Beanstalk, RDS, S3), Vercel' },
                   ].map((skill, index) => (
                     <tr key={index} className="border border-[var(--border-color)]">
                       <th className="bg-[var(--section-bg)] text-[var(--foreground)] px-4 py-2 text-left w-24 font-semibold border-r border-[var(--border-color)] whitespace-nowrap">{skill.category}</th>

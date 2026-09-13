@@ -360,7 +360,7 @@ const KepcoApplicationPage = () => {
                     { category: 'Front-End', items: 'React, Vue.js (2/3), Next.js, TypeScript, Tailwind CSS, Highcharts' },
                     { category: 'Database', items: 'PostgreSQL, KDB+ (대용량 시계열 DB), Supabase, Redis (세션 저장소)' },
                     { category: 'Data / Opt', items: 'Pandas, NumPy, PuLP/Pyomo (선형 프로그래밍 수학적 최적화)' },
-                    { category: 'Infra / DevOps', items: 'Docker, GitHub Actions (CI/CD 자동화), AWS (EC2, Beanstalk), Linux' },
+                    { category: 'Infra / DevOps', items: 'Docker, GitHub Actions (CI/CD 자동화), AWS (EC2, Beanstalk), Vercel, Linux' },
                   ].map((skill, index) => (
                     <tr key={index} className="border-b border-[var(--border-color)] last:border-b-0">
                       <th className="bg-[var(--section-bg)] text-[var(--foreground)] px-4 py-2 text-left w-32 font-semibold border-r border-[var(--border-color)] whitespace-nowrap">
