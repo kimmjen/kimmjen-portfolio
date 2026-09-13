@@ -7,3 +7,6 @@ src/.DS_Store
 /out
 .DS_Store
 /out
+
+# typescript
+*.tsbuildinfo
