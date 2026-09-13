@@ -180,9 +180,9 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 83자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 85자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                            AGM Center 공식 웹 플랫폼 운영 및 전력망 연구 데이터 시각화 웹 인터페이스 유지보수, 연구실 웹 시스템 인프라 및 사용자 대시보드 관리 수행.
+                            AGM Center 공식 웹 플랫폼 운영 및 전력망 연구 데이터 시각화 인터페이스 개발, 연구실 웹 인프라 구축 및 관리, 사용자 대시보드 유지보수 수행.
                           </p>
                         </td>
                       </tr>
@@ -312,7 +312,7 @@ const KepcoApplicationPage = () => {
                     <span className="text-xs font-mono text-[var(--text-muted)]">한국에너지공과대학교 | 2026.05.01 ~ 재직중</span>
                   </div>
                   <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                    차세대그리드연구소 AGM Center 공식 플랫폼 운영 및 전력망 연구 데이터 모니터링을 위한 웹 대시보드 인터페이스 개발, 연구실 웹 시스템 인프라 및 사용자 화면 유지보수 담당.
+                    차세대그리드연구소 AGM Center 공식 플랫폼 운영 및 전력망 연구 데이터 모니터링을 위한 웹 대시보드 인터페이스 개발, 연구실 웹 인프라 구축 및 관리, 사용자 화면 유지보수 담당.
                   </p>
                 </div>
 

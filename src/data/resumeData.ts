@@ -87,7 +87,7 @@ const resumeDataKo: ResumeData = {
           description: [
             "차세대그리드연구소(김집 교수 연구실) AGM Center 공식 웹페이지 운영 및 풀스택 유지보수",
             "전력망 연구 데이터 모니터링 및 시각화 웹 인터페이스 개선",
-            "연구실 웹 플랫폼 인프라 관리 및 시스템 안정성 유지",
+            "연구실 웹 인프라 구축 및 관리, 시스템 안정성 유지",
           ],
         },
       ],
@@ -489,7 +489,7 @@ const resumeDataEn: ResumeData = {
           description: [
             "Operate and maintain the official web platform for the Advanced Grid Management (AGM) Center under Prof. Jip Kim.",
             "Improve grid research data monitoring and visualization web interfaces.",
-            "Manage software infrastructure and system stability for the laboratory web platform.",
+            "Build and manage web infrastructure, ensuring high system stability for the laboratory.",
           ],
         },
       ],
