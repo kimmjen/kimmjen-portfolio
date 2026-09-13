@@ -51,7 +51,7 @@ export interface ResumeData {
 const resumeDataKo: ResumeData = {
   name: "김제민",
   nameEn: "KIM JE MIN",
-  profile: "KDB+·PostgreSQL 기반 대용량 시계열 데이터 처리부터 Vue.js/React 대시보드 구현까지, 약 3년간 에너지(VPP) 플랫폼 전 계층을 설계·운영한 풀스택 개발자",
+  profile: "민간 VPP(가상발전소) 플랫폼 구축부터 한국에너지공과대학교(KENTECH) AGM Center의 차세대 전력망 소프트웨어 운영까지, 대용량 시계열 데이터 처리와 Python 성능 최적화, 풀스택 웹 플랫폼 엔지니어링 역량을 보유한 개발자",
   contact: {
     phone: "010-****-****",
     email: "wpals814@gmail.com",
@@ -77,12 +77,30 @@ const resumeDataKo: ResumeData = {
   ],
   experience: [
     {
+      company: "한국에너지공과대학교 (KENTECH)",
+      position: "AGM Center 개발자 · 연구원",
+      period: "2026.05.01 - 현재",
+      projects: [
+        {
+          title: "AGM Center 웹 플랫폼 및 KPG 애플리케이션 운영·고도화",
+          date: "2026.05.01 ~ 현재",
+          description: [
+            "차세대그리드연구소(김집 교수 연구실) AGM Center 공식 웹페이지 운영 및 풀스택 유지보수",
+            "전력망 해석 및 운영을 위한 KPG Run/View 애플리케이션의 Python 핵심 로직 수정 및 성능 최적화",
+            "차세대 전력망 계통 데이터 시각화 인터페이스 개선 및 시스템 안정성 관리",
+            "연구실 전력망 소프트웨어 인프라 및 배포 환경 관리",
+          ],
+        },
+      ],
+    },
+    {
       company: "ECHOIT",
       position: "데이터라벨링 · 임시직/프리랜서",
-      period: "2025.07 - 2025.11",
+      period: "2025.07.22 - 2025.12.01",
       projects: [
         {
           title: "국회 AI를 위한 데이터 구축 및 품질 관리",
+          date: "2025.07.22 ~ 2025.12.01",
           description: [
             "데이터 라벨러로 입사 후, 뛰어난 정확성과 이해도를 인정받아 데이터 검수자로 역할 전환",
             "3명의 검수자가 동일한 기준으로 작업하도록 '검수 표준 가이드'를 제작하여 팀 전체의 데이터 일관성 확보",
@@ -96,11 +114,11 @@ const resumeDataKo: ResumeData = {
     {
       company: "소프트웨어공작소",
       position: "선임연구원 (프론트엔드 개발)",
-      period: "2024.12 - 2025.03",
+      period: "2024.12.08 - 2025.03.08",
       projects: [
         {
           title: "Toyota 텔레매틱스 웹퍼블리싱",
-          date: "2024.12 ~ 2025.03",
+          date: "2024.12.08 ~ 2025.03.08",
           description: [
             "CallCenterWeb/OperationWeb 클라이언트 및 관리 시스템 웹 퍼블리싱 구현",
             "반응형 웹 디자인 적용 및 크로스 브라우저 호환성 확보",
@@ -112,11 +130,11 @@ const resumeDataKo: ResumeData = {
     {
       company: "이아이피그리드",
       position: "대리",
-      period: "2022.08 - 2024.07",
+      period: "2022.08.05 - 2024.07.01",
       projects: [
         {
           title: "EnergyHub 프로젝트",
-          date: "2023.12 ~ 2024.07",
+          date: "2023.12 ~ 2024.06",
           description: [
             "EIP의 VPP 플랫폼의 리소스의 데이터를 가상으로 만드는 서비스 개발",
             "EIP의 VPP의 connector UI, 스케줄 관리, 데이터 업데이트 서비스 개발",
@@ -126,7 +144,7 @@ const resumeDataKo: ResumeData = {
         },
         {
           title: "Amadeus 프로젝트",
-          date: "2023.12 ~ 2024.07",
+          date: "2023.12 ~ 2024.06",
           description: [
             "EIP의 VPP 플랫폼의 참여자들의 데이터를 기반으로 Balancing Group 생성 및 분석, 지령 참여 여부를 통해 보고서를 공유하기 위한 서비스 개발",
             "Balancing Group(군집화 되어있는 참여자) 들의 지령 수행 여부를 확인하는 UI 개발",
@@ -159,7 +177,7 @@ const resumeDataKo: ResumeData = {
         },
         {
           title: "D1 프로젝트 운영 및 유지보수",
-          date: "2022.08 ~ 2024.07",
+          date: "2022.08.05 ~ 2024.07.01",
           description: [
             "아이온커뮤니케이션즈에서 개발한 D1 CBL 계산 시스템의 지속적 운영 및 유지보수",
             "CBL 알고리즘 및 고객 수요관리 로직 코드 수정 및 업데이트",
@@ -172,11 +190,11 @@ const resumeDataKo: ResumeData = {
     {
       company: "아이온커뮤니케이션즈",
       position: "사원",
-      period: "2021.12 - 2022.08",
+      period: "2021.12.08 - 2022.08.05",
       projects: [
         {
           title: "D1 프로젝트",
-          date: "2021.12 ~ 2022.08",
+          date: "2021.12.08 ~ 2022.08.05",
           description: [
             "수요 반응 프로그램 평가를 위한 고객 기준 부하, 참여 전력 소비 형태 검증 기준(RRMSE)를 계산 및 예측하는 서비스",
             "전력거래소 기준서 기반 고객 기준 부하(CBL) 계산 시스템 개발",
@@ -226,6 +244,42 @@ const resumeDataKo: ResumeData = {
     },
   ],
   projects: [
+    {
+      title: "AGM Center 웹 플랫폼 및 KPG 애플리케이션 운영·고도화",
+      description: "한국에너지공과대학교(KENTECH) 차세대그리드연구소 AGM Center 공식 플랫폼 운영 및 전력망 해석 소프트웨어(KPG Run/View) 고도화. Python 기반 전력망 조류 계산 및 해석 핵심 로직 수정, 성능 최적화, 전력 계통 데이터 시각화 웹 인터페이스 유지보수를 전담하고 있습니다.",
+      period: "2026.05 ~ 현재",
+      link: "",
+      type: "연구실/기관 프로젝트",
+      technologies: ["Python", "FastAPI", "React", "Next.js", "Docker", "Git"],
+      features: [
+        "AGM Center 공식 웹 플랫폼 운영 및 풀스택 기능 유지보수",
+        "KPG Run/View 전력망 해석 애플리케이션 Python 핵심 알고리즘 및 계산 로직 최적화",
+        "차세대 전력망 계통 데이터 시각화 인터페이스 개선 및 시스템 안정성 관리",
+        "연구실 전력망 소프트웨어 인프라 및 배포 환경 관리"
+      ],
+      challenges: [
+        "대용량 전력망 해석 연산 시의 Python 실행 속도 및 메모리 병목 최적화",
+        "복잡한 전력 계통 데이터(Bus, Branch, Generator)를 웹 화면에 직관적으로 시각화하는 UI/UX 설계",
+        "연구진 및 외부 사용자 피드백에 맞춘 빠른 인터페이스 수정 및 안정적인 배포 파이프라인 유지"
+      ]
+    },
+    {
+      title: "Toyota 텔레매틱스 웹퍼블리싱",
+      description: "Toyota 텔레매틱스 CallCenterWeb 및 OperationWeb 관제 시스템 웹 퍼블리싱. 반응형 인터페이스 구현, 크로스 브라우징 호환성 확보 및 로딩 성능 최적화를 수행했습니다.",
+      period: "2024.12 ~ 2025.03",
+      link: "",
+      type: "회사 프로젝트",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Web"],
+      features: [
+        "CallCenterWeb/OperationWeb 클라이언트 및 관리자 관제 웹 퍼블리싱",
+        "다양한 디바이스 환경을 위한 반응형 레이아웃 설계 및 구현",
+        "에셋 최적화를 통한 웹 페이지 로딩 속도 향상"
+      ],
+      challenges: [
+        "다양한 해상도 및 브라우저 환경에서의 렌더링 일관성 보장",
+        "대규모 관제 화면 퍼블리싱 시 CSS 모듈화 및 유지보수성 향상"
+      ]
+    },
     {
       title: "라벨링 품질 검수 플랫폼",
       description: "라벨링 품질 검수 및 인터랙티브 편집 플랫폼. React + TypeScript + Vite + FastAPI로 개발되었으며, 10가지 검증 규칙을 통한 자동 품질 검사 시스템을 핵심 기능으로 제공합니다. 다른 사용자들을 위한 페이지 분석 도구(대용량 ZIP 파일 처리), 라벨링 편집(프리뷰, 검증방법), 전체 변환 및 삭제, 전체/개별 다운로드 기능을 포함합니다. 실시간 품질 지표 시가화 대시보드와 사용자별 통계 분석 기능을 제공하며, Docker 컨테이너화, GitHub Actions CI/CD, AWS Lightsail 배포, Supabase 연동을 통해 운영됩니다.",
@@ -400,7 +454,7 @@ const resumeDataKo: ResumeData = {
 const resumeDataEn: ResumeData = {
   name: "KIM JE MIN",
   nameEn: "KIM JE MIN",
-  profile: "Full-stack developer with 3 years of experience designing and operating energy (VPP) platforms end-to-end — from KDB+/PostgreSQL time-series data processing to Vue.js/React dashboard implementation.",
+  profile: "Full-stack developer and researcher with deep expertise in power grid software, ranging from commercial VPP (Virtual Power Plant) platforms to next-generation grid simulation tools at KENTECH AGM Center — specializing in time-series data pipelines, Python optimization, and interactive web dashboards.",
   contact: {
     phone: "010-****-****",
     email: "wpals814@gmail.com",
@@ -426,12 +480,30 @@ const resumeDataEn: ResumeData = {
   ],
   experience: [
     {
+      company: "Korea Institute of Energy Technology (KENTECH)",
+      position: "AGM Center Developer & Researcher",
+      period: "2026.05.01 - Present",
+      projects: [
+        {
+          title: "Operation and Optimization of AGM Center Web Platform and KPG Application",
+          date: "2026.05.01 ~ Present",
+          description: [
+            "Operate and maintain the official web platform for the Advanced Grid Management (AGM) Center under Prof. Jip Kim.",
+            "Maintain and optimize Python core computation logic for the KPG Run/View power grid analysis software.",
+            "Improve grid data visualization interfaces and ensure system stability.",
+            "Manage software infrastructure and deployment pipelines for the grid laboratory.",
+          ],
+        },
+      ],
+    },
+    {
       company: "ECHOIT",
       position: "Data Labeler / Freelancer",
-      period: "2025.07 - 2025.11",
+      period: "2025.07.22 - 2025.12.01",
       projects: [
         {
           title: "Data Construction and QA for National Assembly AI",
+          date: "2025.07.22 ~ 2025.12.01",
           description: [
             "Started as a data labeler and transitioned to a Data Validator role recognized for high accuracy and understanding.",
             "Created 'Standard Inspection Guidelines' to ensure consistency across 3 validators.",
@@ -445,11 +517,11 @@ const resumeDataEn: ResumeData = {
     {
       company: "Software Workshop",
       position: "Senior Researcher (Frontend Developer)",
-      period: "2024.12 - 2025.03",
+      period: "2024.12.08 - 2025.03.08",
       projects: [
         {
           title: "Toyota Telematics Web Publishing",
-          date: "2024.12 ~ 2025.03",
+          date: "2024.12.08 ~ 2025.03.08",
           description: [
             "Web publishing for CallCenterWeb/OperationWeb client and admin systems.",
             "Applied responsive web design and ensured cross-browser compatibility.",
@@ -461,11 +533,11 @@ const resumeDataEn: ResumeData = {
     {
       company: "EIPGRID",
       position: "Assistant Manager",
-      period: "2022.08 - 2024.07",
+      period: "2022.08.05 - 2024.07.01",
       projects: [
         {
           title: "EnergyHub Project",
-          date: "2023.12 ~ 2024.07",
+          date: "2023.12 ~ 2024.06",
           description: [
             "Developed service to virtually generate resource data for EIP's VPP platform.",
             "Developed VPP connector UI, schedule management, and data update services.",
@@ -475,7 +547,7 @@ const resumeDataEn: ResumeData = {
         },
         {
           title: "Amadeus Project",
-          date: "2023.12 ~ 2024.07",
+          date: "2023.12 ~ 2024.06",
           description: [
             "Developed service for Balancing Group creation, analysis, and report sharing based on VPP participant data.",
             "Developed UI to verify command execution status of Balancing Groups.",
@@ -508,7 +580,7 @@ const resumeDataEn: ResumeData = {
         },
         {
           title: "D1 Project Operations & Maintenance",
-          date: "2022.08 ~ 2024.07",
+          date: "2022.08.05 ~ 2024.07.01",
           description: [
             "Continued operations and maintenance of D1 CBL calculation system originally developed at I-ON Communications.",
             "Updated and modified CBL algorithm and customer demand management logic.",
@@ -521,11 +593,11 @@ const resumeDataEn: ResumeData = {
     {
       company: "I-ON Communications",
       position: "Staff",
-      period: "2021.12 - 2022.08",
+      period: "2021.12.08 - 2022.08.05",
       projects: [
         {
           title: "D1 Project",
-          date: "2021.12 ~ 2022.08",
+          date: "2021.12.08 ~ 2022.08.05",
           description: [
             "Service calculating and predicting customer baseline load and RRMSE for demand response evaluation.",
             "Developed CBL (Customer Baseline Load) calculation system based on KPX (Korea Power Exchange) standards.",
@@ -575,6 +647,42 @@ const resumeDataEn: ResumeData = {
     },
   ],
   projects: [
+    {
+      title: "Operation and Optimization of AGM Center Web Platform and KPG Application",
+      description: "Operation of the official web platform for the Advanced Grid Management (AGM) Center and optimization of power grid analysis software (KPG Run/View) at KENTECH. Responsible for Python-based power flow computation core logic modifications, performance tuning, and grid data visualization interfaces.",
+      period: "2026.05 ~ Present",
+      link: "",
+      type: "Research Project",
+      technologies: ["Python", "FastAPI", "React", "Next.js", "Docker", "Git"],
+      features: [
+        "AGM Center official web platform operation and full-stack maintenance",
+        "Python core algorithm & computation logic optimization for KPG Run/View software",
+        "Next-generation power grid data visualization interface improvements and system stability management",
+        "Lab software infrastructure and deployment environment management"
+      ],
+      challenges: [
+        "Python execution speed and memory optimization for large-scale grid analysis computations",
+        "UI/UX design for intuitive visualization of complex grid data (Bus, Branch, Generator)",
+        "Maintaining rapid UI iterations and reliable deployment pipelines based on researcher feedback"
+      ]
+    },
+    {
+      title: "Toyota Telematics Web Publishing",
+      description: "Web publishing for Toyota Telematics CallCenterWeb and OperationWeb monitoring systems. Implemented responsive layouts, cross-browser compatibility, and asset optimization.",
+      period: "2024.12 ~ 2025.03",
+      link: "",
+      type: "Company Project",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Web"],
+      features: [
+        "Web publishing for CallCenterWeb and OperationWeb monitoring systems",
+        "Responsive layout design and implementation for various device environments",
+        "Page load performance optimization through asset optimization"
+      ],
+      challenges: [
+        "Ensuring rendering consistency across various resolutions and browsers",
+        "Modular CSS architecture for large-scale monitoring dashboard maintenance"
+      ]
+    },
     {
       title: "Labeling QA Platform",
       description: "Labeling QA and interactive editing platform. Developed with React + TypeScript + Vite + FastAPI, providing an automated quality inspection system with 10 validation rules. Includes page analysis tools for other users (large ZIP processing), labeling editing (preview, validation methods), bulk conversion/deletion, and download features. Provides real-time quality metric dashboards and user statistics. Deployed using Docker, GitHub Actions, AWS Lightsail, and Supabase.",

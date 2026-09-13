@@ -1,67 +1,92 @@
-# 김제민 포트폴리오
+# 김제민 포트폴리오 & 입사지원 시스템
 
-Next.js와 React를 활용한 개인 포트폴리오 웹사이트입니다.
+Next.js 15와 React 19를 기반으로 제작된 풀스택 개발자 김제민의 개인 포트폴리오 및 맞춤형 입사지원 웹 애플리케이션입니다.
 
-## 주요 기능
+---
 
-- 반응형 디자인 (모바일, 태블릿, 데스크톱)
-- 다크 모드 지원
-- 경력, 스킬, 프로젝트 소개
-- 이력서 다운로드 (PDF, DOCX 형식)
-- 이메일 연락 기능 (모달 형태)
+## 📌 주요 페이지 및 기능
 
-## 시작하기
+### 1. 메인 포트폴리오 (`/`)
+- 반응형 웹 디자인 (모바일, 태블릿, 데스크톱 완벽 대응)
+- 라이트 / 다크 테마 지원
+- 경력 타임라인, 프로젝트 쇼케이스, 기술 스택 인터랙티브 시각화
 
+### 2. 이력서 & 상세 경력기술서
+- **웹 이력서 (`/resume`, `/resumev2`)**: `@react-pdf/renderer` 기반 브라우저 내 고품질 한글 PDF 실시간 생성 및 다운로드
+- **상세 경력기술서 (`/career`)**: 프로젝트별 상세 아키텍처, 기술적 난제 해결 과정(Troubleshooting), 성과 지표 기술
+
+### 3. 자기소개서 (`/coverletter`)
+- 데이터 엔지니어링, 전력 VPP 도메인, 문제 해결 주도성, 가치관을 담은 전문 산문 자기소개서
+
+### 4. 기업 맞춤형 입사지원서 & 자기소개서
+- **한국전력공사 (KEPCO) (`/apply/kepco`, `/apply/kepco/coverletter`)**
+  - 공기업/한전 100자 요약 규격 대응 경력 매핑 (KENTECH, ECHOIT, 소프트웨어공작소, 이아이피그리드, 아이온커뮤니케이션즈)
+  - 전력 ICT 핵심 직무 수행 실적 (KENTECH AGM Center, D1 CBL, D3/Amadeus VPP, Arkn ESS)
+  - 한전 전용 자기소개서 4문항 (지원동기, 직무전문성, 문제해결, 협업소통)
+  - 인쇄 및 PDF 최적화 미디어 쿼리 적용 (`window.print()` 지원)
+- **한국에너지공과대학교 (KENTECH) (`/apply/kentech`, `/apply/kentech/coverletter`)**
+  - 차세대 전력망 연구소 맞춤 지원서 및 자기소개서
+
+---
+
+## 🛠 기술 스택
+
+- **Core**: Next.js 15 (App Router, Static HTML Export), React 19, TypeScript
+- **Styling**: Tailwind CSS
+- **PDF Generation**: `@react-pdf/renderer` (Noto Sans KR 폰트 연동), `md-to-pdf`
+- **Icons**: FontAwesome (`@fortawesome/react-fontawesome`)
+- **Deploy**: GitHub Pages (`gh-pages`), Vercel
+
+---
+
+## 🚀 시작하기
+
+### 1. 의존성 설치
 ```bash
-# 의존성 설치
 npm install
+# 또는
+pnpm install
+```
 
-# 개발 서버 실행 (http://localhost:3000)
+### 2. 로컬 개발 서버 실행
+```bash
 npm run dev
 ```
+브라우저에서 [http://localhost:3000](http://localhost:3000)으로 접속합니다.
 
-## 이메일 기능 설정하기
-
-이메일 기능을 활성화하려면 프로젝트 루트에 `.env.local` 파일을 생성하고 SMTP 설정을 추가하세요:
-
-```
-SMTP_HOST=smtp.your-email-provider.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=your-email@example.com
-SMTP_PASS=your-email-password
-```
-
-개발 환경에서는 설정을 하지 않아도 [Ethereal Email](https://ethereal.email/)을 통해 테스트 이메일이 자동으로 설정됩니다.
-
-## 이력서 파일 생성하기
-
-이 프로젝트는 `김제민_이력서.md` 마크다운 파일을 기반으로 PDF와 DOCX 형식의 이력서 파일을 자동으로 생성합니다.
-
+### 3. 프로덕션 빌드 및 정적 익스포트
 ```bash
-# 이력서 파일 생성 (PDF, DOCX)
-npm run generate-resume
-```
-
-생성된 파일은 `public/downloads/` 디렉토리에 저장됩니다.
-
-## 배포
-
-```bash
-# 빌드 (이력서 파일 자동 생성 포함)
 npm run build
+```
 
-# GitHub Pages 배포
+### 4. GitHub Pages 배포
+```bash
 npm run deploy
 ```
 
-## 기술 스택
+---
 
-- **프론트엔드**: Next.js, React, TypeScript, Tailwind CSS
-- **백엔드**: Next.js API Routes
-- **이메일**: Nodemailer
-- **배포**: Vercel
+## 📂 프로젝트 구조
 
-## 라이센스
+```text
+src/
+├── app/
+│   ├── apply/
+│   │   ├── kentech/        # KENTECH 지원서 및 자기소개서
+│   │   └── kepco/          # 한국전력공사(KEPCO) 지원서 및 자기소개서
+│   ├── career/             # 상세 경력기술서 페이지
+│   ├── coverletter/        # 일반 자기소개서 페이지
+│   ├── resume/             # 이력서 페이지 (PDF 다운로드 포함)
+│   └── page.tsx            # 메인 포트폴리오
+├── components/             # 공용 UI 컴포넌트 및 PDF 렌더러
+├── context/                # 전역 테마 및 상태 관리
+└── data/
+    ├── coverLetterData.ts  # 일반 및 KEPCO 자기소개서 데이터
+    └── resumeData.ts       # 다국어(국문/영문) 이력서 및 프로젝트 데이터
+```
 
-MIT 
+---
+
+## 📄 라이선스
+
+MIT License
