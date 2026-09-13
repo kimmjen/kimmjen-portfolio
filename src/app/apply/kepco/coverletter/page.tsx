@@ -44,23 +44,39 @@ const KepcoCoverLetterPage = () => {
             <p className="text-base opacity-90">지원자: 김제민 (KIM JE MIN)</p>
           </div>
 
+          {/* 양식 안내 */}
+          <div className="print:hidden px-8 sm:px-12 pt-6">
+            <p className="text-xs text-[var(--text-muted)] leading-relaxed border border-[var(--border-color)] rounded-md px-4 py-3 bg-[var(--section-bg)]">
+              ※ 한국전력공사 입사지원서 자기소개서 3개 문항 양식에 맞춰 작성했습니다.
+              양식 주의사항에 따라 본문에는 개인 식별정보(성명, 수험번호, 성별, 출신지역, 출신학교, 가족관계 등)를 기재하지 않았습니다.
+            </p>
+          </div>
+
           {/* 본문 섹션들 */}
           <div className="p-8 sm:p-12 space-y-10">
-            {kepcoCoverLetterData.map((item, index) => (
-              <section key={item.id} className="break-inside-avoid">
-                <h2 className="text-lg font-bold text-[var(--foreground)] mb-3 pb-2 border-b-2 border-[var(--foreground)] flex items-center gap-2">
-                  <span className="text-[var(--accent)] font-mono text-sm">0{index + 1}.</span>
-                  {item.title.replace(/^0\d\.\s*/, '')}
-                </h2>
-                <div className="space-y-3">
-                  {item.paragraphs.map((para, pIdx) => (
-                    <p key={pIdx} className="text-[14px] text-[var(--text-secondary)] leading-[1.9] text-justify break-keep">
-                      {para}
-                    </p>
-                  ))}
-                </div>
-              </section>
-            ))}
+            {kepcoCoverLetterData.map((item, index) => {
+              const charCount = item.paragraphs.join('\n\n').length;
+              return (
+                <section key={item.id} className="break-inside-avoid">
+                  <h2 className="text-lg font-bold text-[var(--foreground)] mb-3 pb-2 border-b-2 border-[var(--foreground)] flex items-start gap-2">
+                    <span className="text-[var(--accent)] font-mono text-sm mt-0.5">0{index + 1}.</span>
+                    <span className="flex-1 break-keep">{item.title.replace(/^0\d\.\s*/, '')}</span>
+                    {item.limit && (
+                      <span className="shrink-0 text-xs font-mono font-normal text-[var(--text-muted)] mt-1">
+                        {charCount} / {item.limit}자
+                      </span>
+                    )}
+                  </h2>
+                  <div className="space-y-3">
+                    {item.paragraphs.map((para, pIdx) => (
+                      <p key={pIdx} className="text-[14px] text-[var(--text-secondary)] leading-[1.9] text-justify break-keep">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         </div>
       </div>
