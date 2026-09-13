@@ -44,7 +44,7 @@ export const coverLetterData: CoverLetterItem[] = [
     id: "technical_depth",
     title: "기술적 역량: 전력 데이터와 웹 엔지니어링의 결합",
     paragraphs: [
-      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, PostgreSQL 스키마를 직접 설계해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있으며, Redis 캐시와 Pub/Sub을 활용해 실시간 상태 동기화 환경을 만들었습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
+      "백엔드와 데이터 영역에서는 FastAPI와 Flask를 활용해 RESTful API를 설계하고, PostgreSQL 스키마를 직접 설계해 모델링합니다. KDB+ Q 언어로 초·분 단위 대용량 시계열 전력 데이터를 집계한 경험이 있습니다. 선형 프로그래밍(PuLP/Pyomo)으로 ESS 충·방전 스케줄링 최적화 알고리즘을 코드로 풀고, Pandas와 Scikit-learn으로 고객 군집화(K-Means, DBSCAN)를 진행했습니다.",
       "프론트엔드 영역에서는 Vue.js(2/3)와 Highcharts로 에너지 관제 화면과 시계열 차트를 다수 제작했습니다. 최근에는 React, Next.js, TypeScript를 주력으로 다루며 개인 프로젝트 'Refine'을 통해 Next.js 16과 React 19, Supabase, Gemini AI를 결합한 PWA 서비스를 구축해 46개 Vitest 단위 테스트로 품질을 검증하며 운영 중입니다.",
       "인프라 및 운영에서는 Docker 컨테이너 오케스트레이션과 GitHub Actions CI/CD를 기본으로 삼고, AWS(EC2, Elastic Beanstalk, RDS, S3, Lightsail) 환경에서 환경 분리(dev/stage/prod)와 무중단 배포를 관리해 왔습니다."
     ]

@@ -182,7 +182,7 @@ const KentechApplicationPage = () => {
                   {[
                     { category: 'Back-End', items: 'Python (Flask, FastAPI), Spring Boot' },
                     { category: 'Front-End', items: 'Vue.js, React, Next.js, TypeScript, JavaScript, HTML/CSS' },
-                    { category: 'Database', items: 'PostgreSQL, KDB+ (시계열), Supabase, Redis' },
+                    { category: 'Database', items: 'PostgreSQL, KDB+ (시계열), Supabase' },
                     { category: 'Data/ML', items: 'Pandas, NumPy, Scikit-learn, PuLP, Pyomo (LP 최적화)' },
                     { category: 'Infra', items: 'Docker, GitHub Actions, AWS (EC2, Beanstalk, RDS, S3)' },
                   ].map((skill, index) => (
