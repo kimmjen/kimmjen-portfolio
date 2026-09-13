@@ -82,13 +82,12 @@ const resumeDataKo: ResumeData = {
       period: "2026.05.01 - 현재",
       projects: [
         {
-          title: "AGM Center 웹 플랫폼 및 KPG 애플리케이션 운영·고도화",
+          title: "AGM Center 공식 웹 플랫폼 및 연구 대시보드 운영·유지보수",
           date: "2026.05.01 ~ 현재",
           description: [
             "차세대그리드연구소(김집 교수 연구실) AGM Center 공식 웹페이지 운영 및 풀스택 유지보수",
-            "전력망 해석 및 운영을 위한 KPG Run/View 애플리케이션의 Python 핵심 로직 수정 및 성능 최적화",
-            "차세대 전력망 계통 데이터 시각화 인터페이스 개선 및 시스템 안정성 관리",
-            "연구실 전력망 소프트웨어 인프라 및 배포 환경 관리",
+            "전력망 연구 데이터 모니터링 및 시각화 웹 인터페이스 개선",
+            "연구실 웹 플랫폼 인프라 관리 및 시스템 안정성 유지",
           ],
         },
       ],
@@ -485,13 +484,12 @@ const resumeDataEn: ResumeData = {
       period: "2026.05.01 - Present",
       projects: [
         {
-          title: "Operation and Optimization of AGM Center Web Platform and KPG Application",
+          title: "Operation and Maintenance of AGM Center Web Platform and Research Dashboard",
           date: "2026.05.01 ~ Present",
           description: [
             "Operate and maintain the official web platform for the Advanced Grid Management (AGM) Center under Prof. Jip Kim.",
-            "Maintain and optimize Python core computation logic for the KPG Run/View power grid analysis software.",
-            "Improve grid data visualization interfaces and ensure system stability.",
-            "Manage software infrastructure and deployment pipelines for the grid laboratory.",
+            "Improve grid research data monitoring and visualization web interfaces.",
+            "Manage software infrastructure and system stability for the laboratory web platform.",
           ],
         },
       ],

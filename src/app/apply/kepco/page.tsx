@@ -180,9 +180,9 @@ const KepcoApplicationPage = () => {
                       </tr>
                       <tr>
                         <td colSpan={3} className="px-4 py-3 bg-[var(--card-background)]">
-                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 88자):</p>
+                          <p className="text-xs font-semibold text-[var(--accent)] mb-1">활동내용 (공백포함 83자):</p>
                           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                            AGM Center 웹페이지 운영 및 KPG 애플리케이션의 Python 핵심 로직 수정, 성능 최적화와 차세대 전력망 데이터 시각화 인터페이스 유지보수 수행.
+                            AGM Center 공식 웹 플랫폼 운영 및 전력망 연구 데이터 시각화 웹 인터페이스 유지보수, 연구실 웹 시스템 인프라 및 사용자 대시보드 관리 수행.
                           </p>
                         </td>
                       </tr>
@@ -308,11 +308,11 @@ const KepcoApplicationPage = () => {
               <div className="space-y-3 text-sm">
                 <div className="p-3.5 bg-[var(--section-bg)] border border-[var(--border-color)] rounded">
                   <div className="flex justify-between items-center mb-1">
-                    <span className="font-bold text-[var(--foreground)]">차세대 전력망 AGM Center 및 KPG 애플리케이션 운영</span>
+                    <span className="font-bold text-[var(--foreground)]">차세대 전력망 AGM Center 웹 플랫폼 운영 및 대시보드 구축</span>
                     <span className="text-xs font-mono text-[var(--text-muted)]">한국에너지공과대학교 | 2026.05.01 ~ 재직중</span>
                   </div>
                   <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                    차세대그리드연구소 AGM Center 공식 플랫폼 운영 및 전력망 조류 계산/해석을 수행하는 KPG Run/View 애플리케이션의 Python 핵심 로직 수정, 계산 속도 성능 최적화, 전력 계통 데이터 시각화 웹 화면 유지보수 담당.
+                    차세대그리드연구소 AGM Center 공식 플랫폼 운영 및 전력망 연구 데이터 모니터링을 위한 웹 대시보드 인터페이스 개발, 연구실 웹 시스템 인프라 및 사용자 화면 유지보수 담당.
                   </p>
                 </div>
 
