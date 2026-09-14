@@ -172,7 +172,7 @@ const KepcoApplicationPage = () => {
                           한국에너지공과대학교 차세대그리드연구소
                         </td>
                         <td className="px-4 py-2 text-[var(--text-secondary)] w-1/4">
-                          연구원 (웹/앱 개발자)
+                          연구원 (웹/앱 개발자) · 계약직
                         </td>
                         <td className="px-4 py-2 text-right text-[var(--text-muted)] font-mono">
                           2026.05.01 ~ 2026.09.14 (재직중)
