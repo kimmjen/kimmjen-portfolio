@@ -57,6 +57,13 @@ const ResumePage = () => {
         >
           자기소개서
         </Link>
+        <Link
+          href="/info"
+          className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium text-emerald-600 dark:text-emerald-400"
+          title="지원서 작성 퀵 치트시트"
+        >
+          퀵 치트시트
+        </Link>
         <button
           onClick={handleDownloadPDF}
           disabled={generating}

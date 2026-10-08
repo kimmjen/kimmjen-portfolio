@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 // Import the profile image directly
 import profilePic from '../../public/images/profile.jpg';
-
+const TODAY_KR = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric' });
 
 const HeroSection = () => {
   const { data } = useLanguage();
@@ -48,7 +48,7 @@ const HeroSection = () => {
 
       <footer className="pb-10 text-center">
         <div className="text-sm text-[var(--text-tertiary)]">
-          <div>{new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric' })}</div>
+          <div>{TODAY_KR}</div>
         </div>
       </footer>
     </div>

@@ -31,7 +31,12 @@ const ProjectsSection = () => {
         <div className="jm-biography__wrapper">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {data.projects.map((project, index) => (
-              <div key={index} className="bg-[var(--card-background)] border border-[var(--border-color)] rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02]" onClick={() => openModal(project)}>
+              <button
+                type="button"
+                key={index}
+                className="bg-[var(--card-background)] border border-[var(--border-color)] rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] text-left w-full overflow-hidden block"
+                onClick={() => openModal(project)}
+              >
                 <div className="bg-[var(--section-bg)] h-32 flex flex-col items-center justify-center border-b border-[var(--border-color)] p-4 rounded-t-lg">
                   <h4 className="text-xl font-bold text-center text-[var(--foreground)]">{project.title}</h4>
                   {project.period &&
@@ -53,7 +58,7 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

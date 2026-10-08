@@ -1,22 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faDesktop } from '@fortawesome/free-solid-svg-icons';
 
+const emptySubscribe = () => () => {};
+
 const Header = () => {
   const [activeSection, setActiveSection] = useState('profile');
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const { language, setLanguage, t } = useLanguage();
   const { theme, setTheme } = useTheme();
-
-  // Handle hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Track active section based on scroll position
   useEffect(() => {
@@ -216,6 +217,15 @@ const Header = () => {
             className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 block hover:scale-105"
           >
             {t('resume')}
+          </Link>
+        </li>
+        <li className="jm-nav__item">
+          <Link
+            href="/info"
+            className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 block hover:scale-105"
+            title="지원서 작성 퀵 치트시트"
+          >
+            {language === 'ko' ? '지원정보' : 'Quick Info'}
           </Link>
         </li>
       </ul>

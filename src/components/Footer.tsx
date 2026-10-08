@@ -3,15 +3,16 @@
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const Footer = () => {
   const { language } = useLanguage();
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="py-12 border-t border-[var(--border-color)]">
       <div className="text-center px-6">
         <p className="text-[var(--text-tertiary)] text-sm">
-          &copy; {currentYear} KIM JE MIN. All rights reserved.
+          &copy; {CURRENT_YEAR} KIM JE MIN. All rights reserved.
         </p>
         <p className="mt-4 text-[var(--text-tertiary)] text-xs italic">
           &ldquo;{language === 'ko'
