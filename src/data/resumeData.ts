@@ -51,7 +51,7 @@ export interface ResumeData {
 const resumeDataKo: ResumeData = {
   name: "김제민",
   nameEn: "KIM JE MIN",
-  profile: "민간 VPP(가상발전소) 플랫폼 구축부터 한국에너지공과대학교(KENTECH) AGM Center의 차세대 전력망 소프트웨어 운영까지, 대용량 시계열 데이터 처리와 Python 성능 최적화, 풀스택 웹 플랫폼 엔지니어링 역량을 보유한 개발자",
+  profile: "가상발전소(VPP) 플랫폼 구축부터 차세대 전력망 연구 플랫폼 운영까지, 대용량 시계열 데이터 파이프라인과 풀스택 웹 엔지니어링을 수행해 온 개발자",
   contact: {
     phone: "010-****-****",
     email: "wpals814@gmail.com",

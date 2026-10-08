@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
+import SecretShortcut from "@/components/SecretShortcut";
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             {children}
+            <SecretShortcut />
           </LanguageProvider>
         </ThemeProvider>
       </body>

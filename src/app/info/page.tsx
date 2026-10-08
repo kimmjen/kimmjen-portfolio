@@ -166,6 +166,17 @@ export default function ApplicationSpecsPage() {
     }
   }, []);
 
+  // 검색엔진 노출 완전 차단 (noindex, nofollow)
+  useEffect(() => {
+    let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'robots';
+      document.head.appendChild(meta);
+    }
+    meta.content = 'noindex, nofollow';
+  }, []);
+
   // 복사 핸들러
   const copyToClipboard = React.useCallback(async (text: string, label?: string) => {
     if (!text) return;

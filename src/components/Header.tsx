@@ -219,15 +219,6 @@ const Header = () => {
             {t('resume')}
           </Link>
         </li>
-        <li className="jm-nav__item">
-          <Link
-            href="/info"
-            className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 block hover:scale-105"
-            title="지원서 작성 퀵 치트시트"
-          >
-            {language === 'ko' ? '지원정보' : 'Quick Info'}
-          </Link>
-        </li>
       </ul>
     </nav>
   );
