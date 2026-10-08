@@ -15,7 +15,12 @@ export default function SecretShortcut() {
     const handleKeyDown = (e: KeyboardEvent) => {
       const isModifier = e.ctrlKey || e.metaKey;
       const isShift = e.shiftKey;
-      const isQ = e.key === 'q' || e.key === 'Q' || e.code === 'KeyQ';
+      // 한글 상태('ㅂ', 'ㅃ'), 영문 대소문자('q', 'Q'), 물리 키 코드('KeyQ') 모두 지원
+      const isQ =
+        e.code === 'KeyQ' ||
+        e.key.toLowerCase() === 'q' ||
+        e.key === 'ㅂ' ||
+        e.key === 'ㅃ';
 
       if (isModifier && isShift && isQ) {
         e.preventDefault();
