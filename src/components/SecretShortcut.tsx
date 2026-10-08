@@ -25,25 +25,32 @@ export default function SecretShortcut() {
       if (isModifier && isShift && isQ) {
         e.preventDefault();
 
-        if (pathname === '/info') {
+        if (pathname === '/info' || pathname === '/info/') {
           setToastMessage('홈 화면으로 복귀합니다');
           setTimeout(() => {
             router.push('/');
-          }, 300);
+          }, 200);
         } else {
-          setToastMessage('🔒 시크릿 스펙(/info)으로 이동합니다');
-          setTimeout(() => {
-            router.push('/info');
-          }, 300);
+          const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
+          if (!isUnlocked) {
+            sessionStorage.setItem('secret_info_unlocked', 'true');
+            window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
+            setToastMessage('🔓 [지원정보] 탭이 활성화되었습니다 (단축키 재입력 시 즉시 이동)');
+          } else {
+            setToastMessage('🔒 지원정보(/info) 페이지로 이동합니다');
+            setTimeout(() => {
+              router.push('/info/');
+            }, 200);
+          }
         }
 
         setTimeout(() => {
           setToastMessage(null);
-        }, 2500);
+        }, 3000);
       }
     };
 
-    // 2. 모바일/마우스 히든 제스처: 로고(.jm-logo) 5회 연속 탭 시 /info 이동
+    // 2. 모바일/마우스 히든 제스처: 로고(.jm-logo) 5회 연속 탭 시 토글
     const handleLogoClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (target && target.closest('.jm-logo')) {
@@ -57,20 +64,27 @@ export default function SecretShortcut() {
 
         if (clickCountRef.current === 5) {
           clickCountRef.current = 0;
-          if (pathname === '/info') {
+          if (pathname === '/info' || pathname === '/info/') {
             setToastMessage('홈 화면으로 복귀합니다');
             setTimeout(() => {
               router.push('/');
-            }, 300);
+            }, 200);
           } else {
-            setToastMessage('🔒 시크릿 스펙(/info)으로 이동합니다');
-            setTimeout(() => {
-              router.push('/info');
-            }, 300);
+            const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
+            if (!isUnlocked) {
+              sessionStorage.setItem('secret_info_unlocked', 'true');
+              window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
+              setToastMessage('🔓 [지원정보] 탭이 활성화되었습니다');
+            } else {
+              setToastMessage('🔒 지원정보(/info) 페이지로 이동합니다');
+              setTimeout(() => {
+                router.push('/info/');
+              }, 200);
+            }
           }
           setTimeout(() => {
             setToastMessage(null);
-          }, 2500);
+          }, 3000);
         }
       }
     };

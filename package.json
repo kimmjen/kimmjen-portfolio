@@ -11,7 +11,7 @@
     "lint": "oxlint",
     "oxlint": "oxlint",
     "lint:eslint": "next lint",
-    "deploy": "GITHUB_PAGES=true next build && touch out/.nojekyll && gh-pages -d out",
+    "deploy": "rm -rf .next out && GITHUB_PAGES=true next build && touch out/.nojekyll && gh-pages -d out",
     "pdf:resume": "md-to-pdf 김제민_이력서.md",
     "pdf:career": "md-to-pdf 김제민_경력기술서.md",
     "pdf:all": "npm run pdf:resume && npm run pdf:career"

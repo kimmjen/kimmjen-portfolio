@@ -345,19 +345,22 @@ export default function ApplicationSpecsPage() {
             <div className="h-4 w-px bg-[var(--border-color)] hidden sm:block mx-1" />
 
             <Link
-              href="/resume"
+              href="/resume/"
+              prefetch={false}
               className="px-2.5 py-1.5 text-xs rounded-md border border-[var(--border-color)] hover:bg-[var(--section-bg)] text-[var(--text-secondary)] font-medium"
             >
               이력서
             </Link>
             <Link
-              href="/career"
+              href="/career/"
+              prefetch={false}
               className="px-2.5 py-1.5 text-xs rounded-md border border-[var(--border-color)] hover:bg-[var(--section-bg)] text-[var(--text-secondary)] font-medium"
             >
               경력기술서
             </Link>
             <Link
-              href="/coverletter"
+              href="/coverletter/"
+              prefetch={false}
               className="px-2.5 py-1.5 text-xs rounded-md border border-[var(--border-color)] hover:bg-[var(--section-bg)] text-[var(--text-secondary)] font-medium"
             >
               자기소개서

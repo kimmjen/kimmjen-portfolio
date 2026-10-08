@@ -33,12 +33,14 @@ const ResumeV2Page = () => {
       <div className="print:hidden fixed top-4 right-4 z-50 flex gap-2 flex-wrap justify-end">
         <Link
           href="/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           Home
         </Link>
         <Link
-          href="/resume"
+          href="/resume/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           한국어 이력서

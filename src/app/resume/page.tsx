@@ -11,6 +11,13 @@ import profilePic from '../../../public/images/profile.jpg';
 const ResumePage = () => {
   const data = resumeData.ko;
   const [generating, setGenerating] = useState(false);
+  const [isSecretUnlocked, setIsSecretUnlocked] = useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('secret_info_unlocked') === 'true') {
+      setIsSecretUnlocked(true);
+    }
+  }, []);
 
   const handleDownloadPDF = useCallback(async () => {
     setGenerating(true);
@@ -35,28 +42,42 @@ const ResumePage = () => {
       <div className="print:hidden fixed top-4 right-4 z-50 flex gap-2 flex-wrap justify-end">
         <Link
           href="/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           홈
         </Link>
         <Link
-          href="/resumev2"
+          href="/resumev2/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           English Resume
         </Link>
         <Link
-          href="/career"
+          href="/career/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           경력기술서
         </Link>
         <Link
-          href="/coverletter"
+          href="/coverletter/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           자기소개서
         </Link>
+        {isSecretUnlocked && (
+          <Link
+            href="/info/"
+            prefetch={false}
+            className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium text-emerald-600 dark:text-emerald-400 font-semibold"
+            title="지원서 작성 퀵 치트시트"
+          >
+            🔒 지원정보
+          </Link>
+        )}
         <button
           onClick={handleDownloadPDF}
           disabled={generating}

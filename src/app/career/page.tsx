@@ -6,6 +6,13 @@ import resumeData from '@/data/resumeData';
 
 const CareerPage = () => {
   const data = resumeData.ko;
+  const [isSecretUnlocked, setIsSecretUnlocked] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('secret_info_unlocked') === 'true') {
+      setIsSecretUnlocked(true);
+    }
+  }, []);
 
   // 회사 프로젝트도 projects 배열에서 가져와 experience와 매칭
   const getProjectDetail = (title: string) => {
@@ -18,22 +25,35 @@ const CareerPage = () => {
       <div className="print:hidden fixed top-4 right-4 z-50 flex gap-2 flex-wrap justify-end">
         <Link
           href="/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           홈
         </Link>
         <Link
-          href="/resume"
+          href="/resume/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           이력서
         </Link>
         <Link
-          href="/coverletter"
+          href="/coverletter/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           자기소개서
         </Link>
+        {isSecretUnlocked && (
+          <Link
+            href="/info/"
+            prefetch={false}
+            className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium text-emerald-600 dark:text-emerald-400 font-semibold"
+            title="지원서 작성 퀵 치트시트"
+          >
+            🔒 지원정보
+          </Link>
+        )}
         <button
           onClick={() => window.print()}
           className="px-3 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"

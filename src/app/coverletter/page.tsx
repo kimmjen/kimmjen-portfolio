@@ -8,6 +8,13 @@ import resumeData from '@/data/resumeData';
 const CoverLetterPage = () => {
   const name = resumeData.ko.name;
   const nameEn = resumeData.ko.nameEn;
+  const [isSecretUnlocked, setIsSecretUnlocked] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('secret_info_unlocked') === 'true') {
+      setIsSecretUnlocked(true);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[var(--section-bg)] py-12 px-4 sm:px-6 lg:px-8">
@@ -15,22 +22,35 @@ const CoverLetterPage = () => {
       <div className="print:hidden fixed top-4 right-4 z-50 flex gap-2 flex-wrap justify-end">
         <Link
           href="/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           홈
         </Link>
         <Link
-          href="/resume"
+          href="/resume/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           이력서
         </Link>
         <Link
-          href="/career"
+          href="/career/"
+          prefetch={false}
           className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"
         >
           경력기술서
         </Link>
+        {isSecretUnlocked && (
+          <Link
+            href="/info/"
+            prefetch={false}
+            className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium text-emerald-600 dark:text-emerald-400 font-semibold"
+            title="지원서 작성 퀵 치트시트"
+          >
+            🔒 지원정보
+          </Link>
+        )}
         <button
           onClick={() => window.print()}
           className="px-3 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium"

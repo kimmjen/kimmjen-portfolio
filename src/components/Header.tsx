@@ -11,6 +11,7 @@ const emptySubscribe = () => () => {};
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('profile');
+  const [showSecretInfo, setShowSecretInfo] = useState(false);
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
@@ -18,6 +19,24 @@ const Header = () => {
   );
   const { language, setLanguage, t } = useLanguage();
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (sessionStorage.getItem('secret_info_unlocked') === 'true') {
+        setShowSecretInfo(true);
+      }
+      const handleToggle = (e: Event) => {
+        const customEvent = e as CustomEvent<{ unlocked?: boolean }>;
+        if (customEvent.detail && typeof customEvent.detail.unlocked === 'boolean') {
+          setShowSecretInfo(customEvent.detail.unlocked);
+        } else {
+          setShowSecretInfo((prev) => !prev);
+        }
+      };
+      window.addEventListener('toggle-secret-info', handleToggle);
+      return () => window.removeEventListener('toggle-secret-info', handleToggle);
+    }
+  }, []);
 
   // Track active section based on scroll position
   useEffect(() => {
@@ -213,12 +232,26 @@ const Header = () => {
         </li>
         <li className="jm-nav__item">
           <Link
-            href="/resume"
+            href="/resume/"
+            prefetch={false}
             className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 block hover:scale-105"
           >
             {t('resume')}
           </Link>
         </li>
+        {showSecretInfo && (
+          <li className="jm-nav__item">
+            <Link
+              href="/info/"
+              prefetch={false}
+              className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 flex items-center gap-1.5 hover:scale-105 text-emerald-600 dark:text-emerald-400 font-medium"
+              title="지원서 작성 퀵 치트시트"
+            >
+              <span>🔒</span>
+              <span>{language === 'ko' ? '지원정보' : 'Quick Info'}</span>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );
