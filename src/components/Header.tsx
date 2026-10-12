@@ -240,16 +240,28 @@ const Header = () => {
           </Link>
         </li>
         {showSecretInfo && (
-          <li className="jm-nav__item">
+          <li className="jm-nav__item flex items-center justify-center gap-0.5">
             <Link
               href="/info/"
               prefetch={false}
-              className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-3 py-2 flex items-center gap-1.5 hover:scale-105 text-emerald-600 dark:text-emerald-400 font-medium"
-              title="지원서 작성 퀵 치트시트"
+              className="transition-all duration-300 hover:text-[var(--accent)] focus:text-[var(--accent)] focus:outline-none px-2.5 py-2 flex items-center gap-1.5 hover:scale-105 text-emerald-600 dark:text-emerald-400 font-medium"
             >
               <span>🔒</span>
               <span>{language === 'ko' ? '지원정보' : 'Quick Info'}</span>
             </Link>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                sessionStorage.removeItem('secret_info_unlocked');
+                window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: false } }));
+                setShowSecretInfo(false);
+              }}
+              className="text-xs text-[var(--text-tertiary)] hover:text-red-500 p-1 transition-colors rounded hover:bg-[var(--section-bg)]"
+              aria-label="지원정보 탭 닫기"
+            >
+              ✕
+            </button>
           </li>
         )}
       </ul>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function SecretShortcut() {
@@ -9,6 +9,17 @@ export default function SecretShortcut() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const clickCountRef = useRef(0);
   const lastClickTimeRef = useRef(0);
+  const toastTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const showToast = useCallback((msg: string) => {
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+    setToastMessage(msg);
+    toastTimerRef.current = setTimeout(() => {
+      setToastMessage(null);
+    }, 2500);
+  }, []);
 
   useEffect(() => {
     // 1. 키보드 단축키 핸들러: Ctrl + Shift + Q 또는 Cmd + Shift + Q
@@ -25,28 +36,25 @@ export default function SecretShortcut() {
       if (isModifier && isShift && isQ) {
         e.preventDefault();
 
-        if (pathname === '/info' || pathname === '/info/') {
-          setToastMessage('홈 화면으로 복귀합니다');
-          setTimeout(() => {
-            router.push('/');
-          }, 200);
-        } else {
-          const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
-          if (!isUnlocked) {
-            sessionStorage.setItem('secret_info_unlocked', 'true');
-            window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
-            setToastMessage('🔓 [지원정보] 탭이 활성화되었습니다 (단축키 재입력 시 즉시 이동)');
-          } else {
-            setToastMessage('🔒 지원정보(/info) 페이지로 이동합니다');
+        const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
+
+        if (isUnlocked) {
+          // 이미 활성화된 상태 -> 탭 숨김 (Toggle OFF)
+          sessionStorage.removeItem('secret_info_unlocked');
+          window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: false } }));
+          showToast('🔒 [지원정보] 탭이 숨겨졌습니다');
+
+          if (pathname === '/info' || pathname === '/info/') {
             setTimeout(() => {
-              router.push('/info/');
+              router.push('/');
             }, 200);
           }
+        } else {
+          // 비활성화 상태 -> 탭 표시 (Toggle ON)
+          sessionStorage.setItem('secret_info_unlocked', 'true');
+          window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
+          showToast('🔓 [지원정보] 탭이 활성화되었습니다 (단축키 재입력 시 숨김)');
         }
-
-        setTimeout(() => {
-          setToastMessage(null);
-        }, 3000);
       }
     };
 
@@ -64,27 +72,23 @@ export default function SecretShortcut() {
 
         if (clickCountRef.current === 5) {
           clickCountRef.current = 0;
-          if (pathname === '/info' || pathname === '/info/') {
-            setToastMessage('홈 화면으로 복귀합니다');
-            setTimeout(() => {
-              router.push('/');
-            }, 200);
-          } else {
-            const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
-            if (!isUnlocked) {
-              sessionStorage.setItem('secret_info_unlocked', 'true');
-              window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
-              setToastMessage('🔓 [지원정보] 탭이 활성화되었습니다');
-            } else {
-              setToastMessage('🔒 지원정보(/info) 페이지로 이동합니다');
+          const isUnlocked = sessionStorage.getItem('secret_info_unlocked') === 'true';
+
+          if (isUnlocked) {
+            sessionStorage.removeItem('secret_info_unlocked');
+            window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: false } }));
+            showToast('🔒 [지원정보] 탭이 숨겨졌습니다');
+
+            if (pathname === '/info' || pathname === '/info/') {
               setTimeout(() => {
-                router.push('/info/');
+                router.push('/');
               }, 200);
             }
+          } else {
+            sessionStorage.setItem('secret_info_unlocked', 'true');
+            window.dispatchEvent(new CustomEvent('toggle-secret-info', { detail: { unlocked: true } }));
+            showToast('🔓 [지원정보] 탭이 활성화되었습니다 (5회 탭 시 숨김)');
           }
-          setTimeout(() => {
-            setToastMessage(null);
-          }, 3000);
         }
       }
     };
@@ -95,8 +99,11 @@ export default function SecretShortcut() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('click', handleLogoClick);
+      if (toastTimerRef.current) {
+        clearTimeout(toastTimerRef.current);
+      }
     };
-  }, [router, pathname]);
+  }, [router, pathname, showToast]);
 
   if (!toastMessage) return null;
 

@@ -14,8 +14,20 @@ const ResumePage = () => {
   const [isSecretUnlocked, setIsSecretUnlocked] = useState(false);
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined' && sessionStorage.getItem('secret_info_unlocked') === 'true') {
-      setIsSecretUnlocked(true);
+    if (typeof window !== 'undefined') {
+      if (sessionStorage.getItem('secret_info_unlocked') === 'true') {
+        setIsSecretUnlocked(true);
+      }
+      const handleToggle = (e: Event) => {
+        const customEvent = e as CustomEvent<{ unlocked?: boolean }>;
+        if (customEvent.detail && typeof customEvent.detail.unlocked === 'boolean') {
+          setIsSecretUnlocked(customEvent.detail.unlocked);
+        } else {
+          setIsSecretUnlocked((prev) => !prev);
+        }
+      };
+      window.addEventListener('toggle-secret-info', handleToggle);
+      return () => window.removeEventListener('toggle-secret-info', handleToggle);
     }
   }, []);
 
@@ -73,7 +85,6 @@ const ResumePage = () => {
             href="/info/"
             prefetch={false}
             className="px-3 py-2 bg-[var(--card-background)] border border-[var(--border-color)] rounded-md shadow-sm hover:opacity-80 transition-colors text-xs font-medium text-emerald-600 dark:text-emerald-400 font-semibold"
-            title="지원서 작성 퀵 치트시트"
           >
             🔒 지원정보
           </Link>
